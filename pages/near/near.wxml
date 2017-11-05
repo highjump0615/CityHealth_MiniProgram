@@ -18,27 +18,29 @@
       <scroll-view scroll-y="true">
         <view class="nav-items shop-list">
           <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
-            <view class="nav-item bottom-border">
-              <!-- 图片 -->
-              <view class="nav-item-head">
-                <image src="../../res/images/img_default_shop.png" mode="aspectFill" />
-              </view>
-
-              <view class="nav-item-content flex-rest-width">
-                <text class="nav-text-title">SPA养生会所</text>
-                <template is="ratestar" />
-                <text class="nav-text-desc nav-text-addr">地址：北京市朝阳区东亚望京中心</text>
-              </view>
-
-              <view class="nav-item-tail">
-                <!-- 优惠标志 -->
-                <view>
-                  <view class="nav-text-mark mr-10">卡</view>
-                  <view class="nav-text-mark">惠</view>
+            <navigator url="../shop/shop">
+              <view class="nav-item bottom-border">
+                <!-- 图片 -->
+                <view class="nav-item-head">
+                  <image src="../../res/images/img_default_shop.png" mode="aspectFill" />
                 </view>
-                <text class="nav-text-desc text-align-right">12km</text>
+
+                <view class="nav-item-content flex-rest-width">
+                  <text class="nav-text-title">SPA养生会所</text>
+                  <template is="ratestar" />
+                  <text class="nav-text-desc nav-text-addr">地址：北京市朝阳区东亚望京中心</text>
+                </view>
+
+                <view class="nav-item-tail">
+                  <!-- 优惠标志 -->
+                  <view>
+                    <view class="nav-text-mark mr-10">卡</view>
+                    <view class="nav-text-mark">惠</view>
+                  </view>
+                  <text class="nav-text-desc text-align-right">12km</text>
+                </view>
               </view>
-            </view>
+            </navigator>
           </block>
         </view>
       </scroll-view>

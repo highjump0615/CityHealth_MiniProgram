@@ -68,7 +68,7 @@ scroll-view {
   display: flex;
   font-size: 34rpx;
 }
-.nav-item.bottom-border {
+.bottom-border {
   border-bottom: 1px solid #e7e7e7;
 }
 .nav-item-content {
@@ -78,4 +78,11 @@ scroll-view {
   width: 16rpx;
   height: 25rpx;
   margin-left: 40rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #888888;
+  display: block;
+  padding: 30rpx 30rpx 20rpx 30rpx;
 }

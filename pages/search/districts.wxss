@@ -1,0 +1,12 @@
+/* pages/search/districts.wxss */
+
+page {
+  background-color: white;
+}
+
+.nav-items{
+  margin: 0;
+}
+.nav-item {
+  margin-right: 0;
+}
