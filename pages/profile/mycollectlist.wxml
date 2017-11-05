@@ -1,0 +1,32 @@
+<!--pages/profile/mycollectlist.wxml-->
+
+<import src="../shop/shoplistitem.wxml" />
+
+<scroll-view scroll-y="true">
+  <view class="nav-items">
+    <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
+      <view class="slide-item bottom-border flex-row">
+        <!-- 滑动前景 -->
+        <view class="slide-front">
+          <!-- <navigator url="../shop/shop"> -->
+            <view class="nav-item">
+              <!-- 基础信息 -->
+              <template is="shoplistitem" />
+
+              <!-- 更多 -->
+              <view class="nav-item-tail flex-row flex-center" bindtap="onButMore" hover-stop-propagation="true">
+                <image src="../../res/images/but_3dots.png"></image>
+              </view>
+            </view>
+          <!-- </navigator> -->
+        </view>
+
+        <!-- 滑动背景 -->
+        <view class="slide-back flex-row">
+          <button class="but-transparent flex-row flex-center">取消收藏</button>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+

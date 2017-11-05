@@ -1,0 +1,43 @@
+/* pages/profile/mycollectlist.wxss */
+
+/* 店家列表 */
+.nav-item {
+  margin-right: 0;
+}
+.nav-item-content {
+  margin-left: 0;
+}
+.nav-item-tail image {
+  width: 30rpx;
+  height: 7rpx;
+  margin: 30rpx;
+}
+
+/* 滑动效果 */
+.slide-front {
+  width: 100%;
+  margin-left: -165rpx;
+  transform: translateX(165rpx);
+  -webkit-transform: translateX(165rpx);
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+.slide-back {
+  width: 165rpx;
+  background-color: #f76260;
+  transform: translateX(165rpx);
+  -webkit-transform: translateX(165rpx);
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+.slide-back button {
+  color: white;
+  width: 100%;
+  font-size: 26rpx;
+}
+
+.touch-move-active .slide-front,
+.touch-move-active .slide-back {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+}

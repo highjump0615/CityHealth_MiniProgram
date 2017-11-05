@@ -9,12 +9,14 @@
 <!-- 菜单 -->
 <view class="nav-items">
   <!-- 我的收藏 -->
-  <view class="nav-item bottom-border" bindtap="gotoCureList">
-    <text class="text-name flex-rest-width">我的收藏</text>
-    <view class="flex-row flex-center">
-      <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+  <navigator url="mycollectlist">
+    <view class="nav-item bottom-border" bindtap="gotoCureList">
+      <text class="text-name flex-rest-width">我的收藏</text>
+      <view class="flex-row flex-center">
+        <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+      </view>
     </view>
-  </view>
+  </navigator>
 
   <!-- 我的卡券 -->
   <navigator url="mycardlist">

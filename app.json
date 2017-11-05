@@ -8,6 +8,7 @@
     "pages/search/districts",
     "pages/profile/profile",
     "pages/profile/mycardlist",
+    "pages/profile/mycollectlist",
     "pages/shop/shop",
     "pages/shop/mylist",
     "pages/shop/create"
