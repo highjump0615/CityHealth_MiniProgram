@@ -3,6 +3,10 @@
   padding: 30rpx;
 }
 
+page {
+  background-color: white;
+}
+
 .logo {
   margin-top: 180rpx;
   width: 140rpx;

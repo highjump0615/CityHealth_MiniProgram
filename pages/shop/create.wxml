@@ -1,0 +1,58 @@
+<!--pages/shop/create.wxml-->
+
+<view class="view-form">
+  <view class="nav-items">
+    <!-- 店名 -->
+    <view class="nav-item bottom-border">
+      <view class="flex-row flex-rest-width">
+        <text class="text-name">店名</text>
+        <input class="nav-item-content flex-rest-width" placeholder="店铺名称" />
+      </view>
+    </view>
+
+    <!-- 电话 -->
+    <view class="nav-item bottom-border">
+      <view class="flex-row flex-rest-width">
+        <text class="text-name">电话</text>
+        <input class="nav-item-content flex-rest-width" placeholder="手机或固话" />
+      </view>
+    </view>
+
+    <!-- QQ -->
+    <view class="nav-item bottom-border">
+      <view class="flex-row flex-rest-width">
+        <text class="text-name">QQ</text>
+        <input class="nav-item-content flex-rest-width" placeholder="QQ号码" />
+      </view>
+    </view>
+
+    <!-- 微信 -->
+    <view class="nav-item bottom-border">
+      <view class="flex-row flex-rest-width">
+        <text class="text-name">微信</text>
+        <input class="nav-item-content flex-rest-width" placeholder="微信号码" />
+      </view>
+    </view>
+
+    <!-- 地址 -->
+    <view class="nav-item bottom-border">
+      <view class="flex-row flex-rest-width">
+        <text class="text-name">地址</text>
+        <input class="nav-item-content flex-rest-width" placeholder="店铺地址" />
+      </view>
+    </view>
+
+    <!-- 介绍 -->
+    <view class="nav-item bottom-border">
+      <view class="flex-row flex-rest-width">
+        <text class="text-name">介绍</text>
+        <textarea class="nav-item-content flex-rest-width" placeholder="店铺描述" />
+      </view>
+    </view>
+  
+  </view>
+
+  <button type="primary" bindtap="doConfigure">确定</button>
+  
+</view>
+  

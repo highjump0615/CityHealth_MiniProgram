@@ -1,11 +1,13 @@
 <!--pages/shop/mylist.wxml-->
 
 <!-- 引用店铺信息 -->
-<import src="../shop/shoplistitem.wxml" />
+<import src="shoplistitem.wxml" />
 
 <scroll-view scroll-y="true">
   <view class="flex-row flex-center header">
-    <button class="but-transparent color-theme">发布店铺</button>
+    <navigator url="create">
+      <button class="but-transparent color-theme">发布店铺</button>
+    </navigator>
   </view>
   <view class="nav-items">
     <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
@@ -20,10 +22,12 @@
         <!-- 操作区 -->
         <view class="flex-row view-operation">
           <!-- 修改 -->
-          <button class="but-transparent flex-row flex-center">
-            <image src="../../res/images/shoplist_edit.png" class="mr-10" />
-            <text>修改</text>
-          </button>
+          <navigator url="create">
+            <button class="but-transparent flex-row flex-center">
+              <image src="../../res/images/shoplist_edit.png" class="mr-10" />
+              <text>修改</text>
+            </button>
+          </navigator>
           <!-- 相册 -->
           <button class="but-transparent flex-row flex-center">
             <image src="../../res/images/shoplist_gallery.png" class="mr-10" />

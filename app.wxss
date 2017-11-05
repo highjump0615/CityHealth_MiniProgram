@@ -98,3 +98,14 @@ scroll-view {
   display: block;
   padding: 30rpx 30rpx 20rpx 30rpx;
 }
+
+/* 表单 */
+.view-form .nav-items {
+  margin-top: 30rpx;
+}
+.view-form button {
+  margin: 80rpx 30rpx;
+}
+.view-form input {
+  font-size: 32rpx;
+}

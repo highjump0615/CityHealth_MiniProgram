@@ -12,7 +12,7 @@ page {
 .header button {
   font-size: 30rpx;
   line-height: 100rpx;
-  margin-right: 30rpx;
+  margin: 0 30rpx;
 }
 
 /* 店家列表 */
