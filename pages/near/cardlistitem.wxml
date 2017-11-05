@@ -1,0 +1,15 @@
+<template name="cardlistitem">
+
+  <!-- 价格 -->
+  <view class="flex-row flex-center flex-vert nav-item-price">
+      <text class="color-theme">50元</text>
+      <text>面值券</text>
+    </view>
+
+    <view class="nav-item-content flex-rest-width">
+      <text class="nav-text-title">店名都市保健</text>
+      <text class="nav-text-desc">可抵50元面值消费使用</text>
+      <text class="nav-text-desc">使用时间：2017-09-10之前</text>
+    </view>
+
+</template>

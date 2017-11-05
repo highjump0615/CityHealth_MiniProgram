@@ -7,6 +7,7 @@
     "pages/search/search",
     "pages/search/districts",
     "pages/profile/profile",
+    "pages/profile/mycardlist",
     "pages/shop/shop",
     "pages/shop/mylist",
     "pages/shop/create"

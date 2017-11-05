@@ -2,6 +2,8 @@
 
 <!-- 引用店铺信息 -->
 <import src="../shop/shoplistitem.wxml" />
+<!-- 引用卡券信息 -->
+<import src="cardlistitem.wxml" />
 
 <view class="container">
   <view class="swiper-tab">
@@ -41,45 +43,36 @@
     <swiper-item>
       <!-- 优惠列表 -->
       <scroll-view scroll-y="true">
-          <view class="nav-items onsale-list">
-            <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
-              <view class="nav-item">
-                <view class="nav-item-content flex-rest-width">
-                  <text class="nav-text-title">都市保健</text>
-                  <text class="nav-text-desc nav-text-addr">店内消费满500元送50元面值券一张，限量发行100张，每次消费限用一张且下次消费使用。</text>
-                  <text class="nav-text-desc nav-text-date">2017-09-01</text>
-                </view>
+        <view class="nav-items onsale-list">
+          <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
+            <view class="nav-item">
+              <view class="nav-item-content flex-rest-width">
+                <text class="nav-text-title">都市保健</text>
+                <text class="nav-text-desc nav-text-addr">店内消费满500元送50元面值券一张，限量发行100张，每次消费限用一张且下次消费使用。</text>
+                <text class="nav-text-desc nav-text-date">2017-09-01</text>
               </view>
-            </block>
-          </view>
-        </scroll-view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
     </swiper-item>
 
     <swiper-item>
       <!-- 卡券列表 -->
       <scroll-view scroll-y="true">
-          <view class="nav-items card-list">
-            <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
-              <view class="nav-item bottom-border">
-                <!-- 价格 -->
-                <view class="flex-row flex-center flex-vert nav-item-price">
-                  <text class="color-theme">50元</text>
-                  <text>面值券</text>
-                </view>
-  
-                <view class="nav-item-content flex-rest-width">
-                  <text class="nav-text-title">店名都市保健</text>
-                  <text class="nav-text-desc">可抵50元面值消费使用</text>
-                  <text class="nav-text-desc">使用时间：2017-09-10之前</text>
-                </view>
-  
-                <view class="nav-item-tail">
-                  <button plain="true" type="primary" class="color-theme">领取</button>
-                </view>
+        <view class="nav-items card-list">
+          <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
+            <view class="nav-item bottom-border">
+              <!-- 基础信息 -->
+              <template is="cardlistitem" />
+
+              <view class="nav-item-tail flex-row flex-vert">
+                <button class="color-theme but-transparent">领取</button>
               </view>
-            </block>
-          </view>
-        </scroll-view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
     </swiper-item>
   </swiper>
 </view>

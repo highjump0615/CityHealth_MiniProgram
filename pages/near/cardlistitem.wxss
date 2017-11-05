@@ -1,0 +1,26 @@
+.card-list {
+  background: transparent !important;
+}
+.card-list .nav-item {
+  background: white;
+  margin: 0 30rpx 30rpx 30rpx;
+  border-radius: 15rpx;
+  border-left: solid 20rpx #1AAD19;
+  padding: 30rpx;
+}
+.card-list .nav-item:nth-child(1) {
+  margin-top: 30rpx;
+}
+.card-list .nav-item-price {
+  font-size: 30rpx;
+  padding-right: 30rpx;
+  border-right: 1rpx solid #cccccc;
+}
+.card-list .nav-text-title {
+  font-size: 30rpx;
+}
+.card-list .nav-text-desc {
+  font-size: 24rpx;
+  margin-top: 8rpx;
+  display: block;
+}

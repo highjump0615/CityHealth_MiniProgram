@@ -4,6 +4,8 @@
 @import "./components/ratestar/ratestar.wxss";
 /* 引用店铺信息 */
 @import "./pages/shop/shoplistitem.wxss";
+/* 引用卡券信息 */
+@import "./pages/near/cardlistitem.wxss";
 
 .container {
   height: 100%;

@@ -29,7 +29,6 @@ page {
 }
 .view-operation button {
   font-size: 26rpx;
-  flex: 1;
 }
 .view-operation button image {
   width: 48rpx;

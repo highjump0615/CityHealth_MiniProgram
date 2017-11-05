@@ -22,24 +22,24 @@
         <!-- 操作区 -->
         <view class="flex-row view-operation">
           <!-- 修改 -->
-          <navigator url="create">
+          <navigator url="create" class="flex-rest-width">
             <button class="but-transparent flex-row flex-center">
               <image src="../../res/images/shoplist_edit.png" class="mr-10" />
               <text>修改</text>
             </button>
           </navigator>
           <!-- 相册 -->
-          <button class="but-transparent flex-row flex-center">
+          <button class="but-transparent flex-row flex-center flex-rest-width">
             <image src="../../res/images/shoplist_gallery.png" class="mr-10" />
             <text>相册</text>
           </button>
           <!-- 定位 -->
-          <button class="but-transparent flex-row flex-center" bindtap="onMap">
+          <button class="but-transparent flex-row flex-center flex-rest-width" bindtap="onMap">
             <image src="../../res/images/shoplist_location.png" class="mr-10" />
             <text>定位</text>
           </button>
           <!-- 删除 -->
-          <button class="but-transparent flex-row flex-center" bindtap="onDelete">
+          <button class="but-transparent flex-row flex-center flex-rest-width" bindtap="onDelete">
               <image src="../../res/images/shoplist_delete.png" class="mr-10" />
               <text>删除</text>
             </button>

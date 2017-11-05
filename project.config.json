@@ -26,7 +26,7 @@
 				{
 					"id": 0,
 					"name": "test",
-					"pathName": "pages/shop/mylist",
+					"pathName": "pages/profile/mycardlist",
 					"query": ""
 				}
 			]

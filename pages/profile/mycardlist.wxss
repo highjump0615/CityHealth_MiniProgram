@@ -1,0 +1,6 @@
+/* pages/profile/mycardlist.wxss */
+
+/* 卡券列表 */
+.card-list .nav-item-tail text {
+  font-size: 30rpx;
+}

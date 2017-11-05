@@ -1,0 +1,20 @@
+<!--pages/profile/mycardlist.wxml-->
+
+<!-- 引用卡券信息 -->
+<import src="../near/cardlistitem.wxml" />
+
+<!-- 卡券列表 -->
+<scroll-view scroll-y="true">
+  <view class="nav-items card-list">
+    <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
+      <view class="nav-item bottom-border">
+        <!-- 基础信息 -->
+        <template is="cardlistitem" />
+
+        <view class="nav-item-tail flex-row flex-vert">
+          <text>未使用</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
