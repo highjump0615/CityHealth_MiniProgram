@@ -21,9 +21,19 @@ page {
 }
 
 /* 通用样式 */
+.m-30 {
+  margin: 30rpx;
+}
 .mr-10 {
   margin-right: 10rpx;
 }
+.mr-40 {
+  margin-right: 40rpx;
+}
+.p-30 {
+  padding: 30rpx;
+}
+
 .text-align-right {
   text-align: right;
 }

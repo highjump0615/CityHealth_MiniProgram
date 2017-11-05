@@ -4,7 +4,7 @@
   <!-- logo -->
   <image class="logo" src="../../res/images/logo.png" mode="aspectFit" />
 
-  <text class="title color-theme">都市保健场所信息大全</text>
+  <text class="title">都市保健场所信息大全</text>
 
   <!-- 进入 -->
   <navigator url="../near/near" open-type="reLaunch">

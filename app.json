@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/near/near",
     "pages/search/search",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/shop/shop"
   ],
 
   "window":{

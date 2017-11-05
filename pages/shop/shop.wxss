@@ -1,0 +1,78 @@
+/* pages/shop/shop.wxss */
+
+page {
+  background-color: white;
+}
+
+.container {
+  height: 100vh;
+}
+
+.text-title {
+  font-size: 36rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.content-main {
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.flex-row {
+  justify-content: space-between;
+}
+
+.summary {
+  font-size: 24rpx;
+}
+
+button {
+  font-size: 24rpx;
+}
+
+.but-transparent {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+.but-transparent::after {
+  border: none;
+}
+
+swiper {
+  margin-top: 10rpx;
+  height: 350rpx;
+}
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 店铺介绍 */
+.intro {
+  margin-top: 10rpx;
+}
+.intro text {
+  display: block;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+
+/* bottom bar */
+.view-bottom {
+  background: #f7f7fa;
+  border-top: 1px solid #cccccc;
+  width: 100%;
+  font-size: 24rpx;
+}
+.view-bottom > .flex-row {
+  height: 100rpx;
+  margin: 0 30rpx;
+}
+.but-collect image {
+  width: 36rpx;
+  height: 34rpx;
+}
