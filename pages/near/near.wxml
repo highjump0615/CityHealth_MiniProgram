@@ -16,29 +16,27 @@
     <swiper-item>
       <!-- 店家列表 -->
       <scroll-view scroll-y="true">
-        <view class="nav-items">
+        <view class="nav-items shop-list">
           <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
-            <view class="nav-item">
-              <view class="nav-item-main bottom-border">
-                <!-- 图片 -->
-                <view class="nav-item-head">
-                  <image src="../../res/images/img_default_shop.png" mode="aspectFill" />
-                </view>
+            <view class="nav-item bottom-border">
+              <!-- 图片 -->
+              <view class="nav-item-head">
+                <image src="../../res/images/img_default_shop.png" mode="aspectFill" />
+              </view>
 
-                <view class="nav-item-content flex-rest-width">
-                  <text class="nav-text-title">SPA养生会所</text>
-                  <template is="ratestar" />
-                  <text class="nav-text-desc nav-text-addr">地址：北京市朝阳区东亚望京中心</text>
-                </view>
+              <view class="nav-item-content flex-rest-width">
+                <text class="nav-text-title">SPA养生会所</text>
+                <template is="ratestar" />
+                <text class="nav-text-desc nav-text-addr">地址：北京市朝阳区东亚望京中心</text>
+              </view>
 
-                <view class="nav-item-tail">
-                  <!-- 优惠标志 -->
-                  <view>
-                    <view class="nav-text-mark mr-10">卡</view>
-                    <view class="nav-text-mark">惠</view>
-                  </view>
-                  <text class="nav-text-desc text-align-right">12km</text>
+              <view class="nav-item-tail">
+                <!-- 优惠标志 -->
+                <view>
+                  <view class="nav-text-mark mr-10">卡</view>
+                  <view class="nav-text-mark">惠</view>
                 </view>
+                <text class="nav-text-desc text-align-right">12km</text>
               </view>
             </view>
           </block>
@@ -52,12 +50,10 @@
           <view class="nav-items onsale-list">
             <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
               <view class="nav-item">
-                <view class="nav-item-main">
-                  <view class="nav-item-content flex-rest-width">
-                    <text class="nav-text-title">都市保健</text>
-                    <text class="nav-text-desc nav-text-addr">店内消费满500元送50元面值券一张，限量发行100张，每次消费限用一张且下次消费使用。</text>
-                    <text class="nav-text-desc nav-text-date">2017-09-01</text>
-                  </view>
+                <view class="nav-item-content flex-rest-width">
+                  <text class="nav-text-title">都市保健</text>
+                  <text class="nav-text-desc nav-text-addr">店内消费满500元送50元面值券一张，限量发行100张，每次消费限用一张且下次消费使用。</text>
+                  <text class="nav-text-desc nav-text-date">2017-09-01</text>
                 </view>
               </view>
             </block>
@@ -71,22 +67,20 @@
           <view class="nav-items card-list">
             <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
               <view class="nav-item bottom-border">
-                <view class="nav-item-main">
-                  <!-- 价格 -->
-                  <view class="flex-row nav-item-price">
-                    <text class="color-theme">50元</text>
-                    <text>面值券</text>
-                  </view>
-    
-                  <view class="nav-item-content flex-rest-width">
-                    <text class="nav-text-title">店名都市保健</text>
-                    <text class="nav-text-desc">可抵50元面值消费使用</text>
-                    <text class="nav-text-desc">使用时间：2017-09-10之前</text>
-                  </view>
-    
-                  <view class="nav-item-tail">
-                    <button plain="true" type="primary" class="color-theme">领取</button>
-                  </view>
+                <!-- 价格 -->
+                <view class="flex-row flex-center flex-vert nav-item-price">
+                  <text class="color-theme">50元</text>
+                  <text>面值券</text>
+                </view>
+  
+                <view class="nav-item-content flex-rest-width">
+                  <text class="nav-text-title">店名都市保健</text>
+                  <text class="nav-text-desc">可抵50元面值消费使用</text>
+                  <text class="nav-text-desc">使用时间：2017-09-10之前</text>
+                </view>
+  
+                <view class="nav-item-tail">
+                  <button plain="true" type="primary" class="color-theme">领取</button>
                 </view>
               </view>
             </block>

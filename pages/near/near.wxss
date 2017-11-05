@@ -29,15 +29,10 @@ page {
 }
 
 /* 列表 */
-.nav-item {
-  background-color: white;
+.nav-items {
+  margin: 0;
 }
-.nav-item-main {
-  margin: 0 30rpx;
-  padding: 20rpx 0;
-  display: flex;
-}
-.nav-item-main.bottom-border {
+.nav-item.bottom-border {
   border-bottom: 1px solid #cccccc;
 }
 .nav-item-head {
@@ -48,8 +43,6 @@ page {
 .nav-item-head image {
   width: 100%;
   height: 100%;
-}
-.nav-item-content {
 }
 
 .nav-text-title {
@@ -82,6 +75,11 @@ page {
   float: left;
 }
 
+/* 店家列表 */
+.shop-list .nav-item-content {
+  margin-left: 0;
+}
+
 .ratestar {
   margin-top: 8rpx;
 }
@@ -98,27 +96,29 @@ page {
   display: block;
   text-align: right;
 }
+.onsale-list .nav-item-content {
+  margin-left: 0;
+}
+
 
 /* 卡券列表 */
+.card-list {
+  background: transparent;
+}
 .card-list .nav-item {
+  background: white;
   margin: 0 30rpx 30rpx 30rpx;
   border-radius: 15rpx;
   border-left: solid 20rpx #1AAD19;
+  padding: 30rpx;
 }
 .card-list .nav-item:nth-child(1) {
   margin-top: 30rpx;
-}
-.card-list .nav-item-main {
-  margin: 0;
-  padding: 30rpx;
 }
 .card-list .nav-item-price {
   font-size: 30rpx;
   padding-right: 30rpx;
   border-right: 1rpx solid #cccccc;
-}
-.card-list .nav-item-content {
-  margin-left: 30rpx;
 }
 .card-list .nav-text-title {
   font-size: 30rpx;

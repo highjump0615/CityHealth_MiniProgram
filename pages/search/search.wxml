@@ -1,2 +1,37 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view>
+    <!-- 菜单 -->
+    <view class="nav-items">
+      <!-- 区域 -->
+      <view class="nav-item bottom-border">
+        <view class="flex-row flex-rest-width" bindtap="gotoWifiList">
+          <text class="text-name">区域</text>
+          <text class="nav-item-content flex-rest-width"></text>
+        </view>
+        <view class="flex-row">
+          <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+        </view>
+      </view>
+
+      <!-- 商圈 -->
+      <view class="nav-item bottom-border">
+          <view class="flex-row flex-rest-width" bindtap="gotoWifiList">
+            <text class="text-name">商圈</text>
+            <text class="nav-item-content flex-rest-width"></text>
+          </view>
+          <view class="flex-row">
+            <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+          </view>
+        </view>
+  
+      <!-- 店名 -->
+      <view class="nav-item bottom-border">
+          <view class="flex-row flex-rest-width">
+            <text class="text-name">店名</text>
+            <input class="nav-item-content flex-rest-width" placeholder="请输入" />
+          </view>
+        </view>
+    </view>
+  </view>
+  
+  <button type="primary" bindtap="doConfigure">确定</button>

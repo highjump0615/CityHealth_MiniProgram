@@ -38,7 +38,34 @@ scroll-view {
 }
 .flex-row {
   display: flex;
-  align-items: center;
   justify-content: center;
+}
+.flex-row.flex-center {
+  align-items: center;
+}
+.flex-row.flex-vert {
   flex-direction: column;
+}
+
+/* 列表样式 */
+.nav-items {
+  margin-top: 30rpx;
+  background: white;
+}
+.nav-item {
+  margin: 0 30rpx;
+  padding: 20rpx 0;
+  display: flex;
+  font-size: 34rpx;
+}
+.nav-item.bottom-border {
+  border-bottom: 1px solid #e7e7e7;
+}
+.nav-item-content {
+  margin-left: 30rpx;
+}
+.nav-item-arrow {
+  width: 16rpx;
+  height: 25rpx;
+  margin-left: 40rpx;
 }

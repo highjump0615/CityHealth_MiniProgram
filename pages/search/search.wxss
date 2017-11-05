@@ -1,1 +1,9 @@
 /* pages/search/search.wxss */
+
+button {
+  margin: 80rpx 30rpx;
+}
+
+input {
+  font-size: 32rpx;
+}
