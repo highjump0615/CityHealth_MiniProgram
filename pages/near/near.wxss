@@ -46,6 +46,12 @@ page {
 }
 
 /* 店家列表 */
+.shop-list .nav-item {
+  align-items: stretch;
+}
+.shop-list .nav-item-tail {
+  justify-content: space-between;
+}
 .shop-list .nav-item-content {
   margin-left: 0;
 }

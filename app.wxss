@@ -81,6 +81,7 @@ scroll-view {
   padding: 20rpx 0;
   display: flex;
   font-size: 34rpx;
+  align-items: center;
 }
 .bottom-border {
   border-bottom: 1px solid #e7e7e7;

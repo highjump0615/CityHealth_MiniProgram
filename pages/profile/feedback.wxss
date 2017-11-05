@@ -1,0 +1,33 @@
+/* pages/profile/feedback.wxss */
+
+.text-title {
+  color: #515151;
+  font-size: 24rpx;
+  margin: 30rpx;
+  display: block;
+}
+
+.nav-item-title {
+  font-size: 30rpx;
+}
+
+.nav-item-desc {
+  font-size: 24rpx;
+}
+
+.nav-checkbox {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+textarea {
+  background: white;
+  font-size: 24rpx;
+  padding: 30rpx;
+  display: block;
+  width: 100%;
+}
+
+button {
+  margin: 80rpx 30rpx;
+}

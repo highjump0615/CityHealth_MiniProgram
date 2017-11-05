@@ -1,0 +1,34 @@
+<!--pages/profile/feedback.wxml-->
+
+<text class="text-title">问题类型</text>
+<view class="nav-items">
+
+  <view class="nav-item bottom-border">
+    <text class="nav-item-title mr-40">功能异常</text>
+    <text class="nav-item-desc flex-rest-width">不能正常使用现有功能</text>
+    <view class="nav-checkbox">
+      <icon type="success"></icon>
+    </view>
+  </view>
+
+  <view class="nav-item bottom-border">
+    <text class="nav-item-title mr-40">使用建议</text>
+    <text class="nav-item-desc flex-rest-width">用的不满意的地方</text>
+    <view class="nav-checkbox">
+      <icon type="circle"></icon>
+    </view>
+  </view>
+
+  <view class="nav-item">
+    <text class="nav-item-title mr-40">功能需求</text>
+    <text class="nav-item-desc flex-rest-width">现有功能不能满足</text>
+    <view class="nav-checkbox">
+      <icon type="circle"></icon>
+    </view>
+  </view>
+</view>
+
+<text class="text-title">详情描述</text>
+<textarea placeholder="如果您对我们有什么建议、想法和期望，请告诉我们"></textarea>
+
+<button type="primary" bindtap="doConfigure">确定</button>

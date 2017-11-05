@@ -39,11 +39,13 @@
   </navigator>
 
   <!-- 意见反馈 -->
-  <view class="nav-item">
-    <text class="text-name flex-rest-width">意见反馈</text>
-    <view class="flex-row flex-center">
-      <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+  <navigator url="feedback">
+    <view class="nav-item">
+      <text class="text-name flex-rest-width">意见反馈</text>
+      <view class="flex-row flex-center">
+        <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+      </view>
     </view>
-  </view>
+  </navigator>
 
 </view>

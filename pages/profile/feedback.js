@@ -1,4 +1,4 @@
-// pages/shop/mylist.js
+// pages/profile/feedback.js
 Page({
 
   /**
@@ -62,34 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  /**
-   * 删除列表里的店铺
-   */
-  onDelete: function() {
-    wx.showModal({
-      title: '删除',
-      content: '确认要删除当前选择店铺吗？',
-      confirmColor: '#1AAD19'
-    });
-  },
-  /**
-   * 地图导航
-   */
-  onMap: function() {
-    wx.openLocation({
-      latitude: 39.9427,
-      longitude: 116.3337,
-      scale: 12,
-      name: '都市保健',
-      address: '北京市朝阳区东亚望京中心',
-      success: function() {},
-      fail: function(err) {
-        wx.showModal({
-          content: err.errMsg,
-          showCancel: false
-        });
-      }
-    });
   }
 })

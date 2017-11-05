@@ -9,6 +9,7 @@
     "pages/profile/profile",
     "pages/profile/mycardlist",
     "pages/profile/mycollectlist",
+    "pages/profile/feedback",
     "pages/shop/shop",
     "pages/shop/mylist",
     "pages/shop/create"

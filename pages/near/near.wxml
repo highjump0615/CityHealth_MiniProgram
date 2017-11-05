@@ -25,7 +25,7 @@
                 <!-- 基础信息 -->
                 <template is="shoplistitem" />
 
-                <view class="nav-item-tail">
+                <view class="nav-item-tail flex-row flex-vert">
                   <!-- 优惠标志 -->
                   <view>
                     <view class="nav-text-mark mr-10">卡</view>
