@@ -1,5 +1,9 @@
 /* pages/search/search.wxss */
 
+.nav-items {
+  margin-top: 30rpx;
+}
+
 button {
   margin: 80rpx 30rpx;
 }

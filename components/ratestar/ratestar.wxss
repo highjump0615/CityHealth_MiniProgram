@@ -2,6 +2,7 @@
 
 .ratestar {
   display: flex;
+  margin-top: 8rpx;
 }
 
 .ratestar image {

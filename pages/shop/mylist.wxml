@@ -1,0 +1,47 @@
+<!--pages/shop/mylist.wxml-->
+
+<!-- 引用店铺信息 -->
+<import src="../shop/shoplistitem.wxml" />
+
+<scroll-view scroll-y="true">
+  <view class="flex-row flex-center header">
+    <button class="but-transparent color-theme">发布店铺</button>
+  </view>
+  <view class="nav-items">
+    <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
+      <view class="nav-item bottom-border">
+        <!-- 基础信息 -->
+        <navigator url="../shop/shop">
+          <view class="flex-row">
+            <template is="shoplistitem" />
+          </view>
+        </navigator>
+
+        <!-- 操作区 -->
+        <view class="flex-row view-operation">
+          <!-- 修改 -->
+          <button class="but-transparent flex-row flex-center">
+            <image src="../../res/images/shoplist_edit.png" class="mr-10" />
+            <text>修改</text>
+          </button>
+          <!-- 相册 -->
+          <button class="but-transparent flex-row flex-center">
+            <image src="../../res/images/shoplist_gallery.png" class="mr-10" />
+            <text>相册</text>
+          </button>
+          <!-- 定位 -->
+          <button class="but-transparent flex-row flex-center" bindtap="onMap">
+            <image src="../../res/images/shoplist_location.png" class="mr-10" />
+            <text>定位</text>
+          </button>
+          <!-- 删除 -->
+          <button class="but-transparent flex-row flex-center" bindtap="onDelete">
+              <image src="../../res/images/shoplist_delete.png" class="mr-10" />
+              <text>删除</text>
+            </button>
+        </view>
+
+      </view>
+    </block>
+  </view>
+</scroll-view>

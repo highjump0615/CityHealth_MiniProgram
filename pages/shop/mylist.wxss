@@ -1,0 +1,37 @@
+/* pages/shop/mylist.wxss */
+
+page {
+  background-color: white;
+}
+
+.header {
+  background: solid #fafafa;
+  border-bottom: 2rpx solid #cccccc;
+  justify-content: flex-end;
+}
+.header button {
+  font-size: 30rpx;
+  line-height: 100rpx;
+  margin-right: 30rpx;
+}
+
+/* 店家列表 */
+.nav-item {
+  display: block;
+}
+.nav-item-content {
+  margin-left: 0;
+}
+
+/* 操作按钮 */
+.view-operation {
+  margin-top: 20rpx;
+}
+.view-operation button {
+  font-size: 26rpx;
+  flex: 1;
+}
+.view-operation button image {
+  width: 48rpx;
+  height: 43rpx;
+}

@@ -2,6 +2,8 @@
 
 /* 引用星级评价 */
 @import "./components/ratestar/ratestar.wxss";
+/* 引用店铺信息 */
+@import "./pages/shop/shoplistitem.wxss";
 
 .container {
   height: 100%;
@@ -57,9 +59,19 @@ scroll-view {
   flex-direction: column;
 }
 
+/* 按钮 */
+.but-transparent {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+.but-transparent::after {
+  border: none;
+}
+
+
 /* 列表样式 */
 .nav-items {
-  margin-top: 30rpx;
   background: white;
 }
 .nav-item {

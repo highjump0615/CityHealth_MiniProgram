@@ -33,15 +33,6 @@ button {
   font-size: 24rpx;
 }
 
-.but-transparent {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-}
-.but-transparent::after {
-  border: none;
-}
-
 swiper {
   margin-top: 10rpx;
   height: 350rpx;

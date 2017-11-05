@@ -1,0 +1,15 @@
+<!-- 引用星级评价 -->
+<import src="../../components/ratestar/ratestar.wxml" />
+
+<template name="shoplistitem">
+  <!-- 图片 -->
+  <view class="nav-item-head">
+    <image src="../../res/images/img_default_shop.png" mode="aspectFill" />
+  </view>
+
+  <view class="nav-item-content flex-rest-width">
+    <text class="nav-text-title">SPA养生会所</text>
+    <template is="ratestar" />
+    <text class="nav-text-desc nav-text-addr">地址：北京市朝阳区东亚望京中心</text>
+  </view>
+</template>

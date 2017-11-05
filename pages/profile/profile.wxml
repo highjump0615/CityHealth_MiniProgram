@@ -11,7 +11,7 @@
   <!-- 我的收藏 -->
   <view class="nav-item bottom-border" bindtap="gotoCureList">
     <text class="text-name flex-rest-width">我的收藏</text>
-    <view class="flex-row">
+    <view class="flex-row flex-center">
       <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
     </view>
   </view>
@@ -19,23 +19,25 @@
   <!-- 我的卡券 -->
   <view class="nav-item bottom-border">
     <text class="text-name flex-rest-width">我的卡券</text>
-    <view class="flex-row">
+    <view class="flex-row flex-center">
       <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
     </view>
   </view>
 
   <!-- 我的店铺 -->
-  <view class="nav-item bottom-border">
-    <text class="text-name flex-rest-width">我的店铺</text>
-    <view class="flex-row">
-      <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+  <navigator url="../shop/mylist">
+    <view class="nav-item bottom-border">
+      <text class="text-name flex-rest-width">我的店铺</text>
+      <view class="flex-row flex-center">
+        <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+      </view>
     </view>
-  </view>
+  </navigator>
 
   <!-- 意见反馈 -->
   <view class="nav-item">
     <text class="text-name flex-rest-width">意见反馈</text>
-    <view class="flex-row">
+    <view class="flex-row flex-center">
       <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
     </view>
   </view>

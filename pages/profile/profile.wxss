@@ -18,3 +18,7 @@
 .userinfo text {
   font-size: 34rpx;
 }
+
+.nav-items {
+  margin-top: 30rpx;
+}

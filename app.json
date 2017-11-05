@@ -7,7 +7,8 @@
     "pages/search/search",
     "pages/search/districts",
     "pages/profile/profile",
-    "pages/shop/shop"
+    "pages/shop/shop",
+    "pages/shop/mylist"
   ],
 
   "window":{
