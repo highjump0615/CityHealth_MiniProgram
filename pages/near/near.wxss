@@ -1,0 +1,136 @@
+/* pages/near/near.wxss */
+
+page {
+  height: 100vh;
+  display: block;
+}
+
+/* tab切换 */
+.swiper-tab{
+  border-bottom: 2rpx solid #cccccc; 
+  text-align: center; 
+  line-height: 90rpx;
+  display: flex;
+  width: 100%;
+  background-color: white;
+}
+.swiper-tab-list{
+  font-size: 30rpx; 
+  color: #515151; 
+  flex: 1;
+}
+.on{
+  color: #1AAD19; 
+  border-bottom: 5rpx solid #1AAD19;
+}
+.swiper-box{ 
+  width: 100%;
+  flex: 1;
+}
+
+/* 列表 */
+.nav-item {
+  background-color: white;
+}
+.nav-item-main {
+  margin: 0 30rpx;
+  padding: 20rpx 0;
+  display: flex;
+}
+.nav-item-main.bottom-border {
+  border-bottom: 1px solid #cccccc;
+}
+.nav-item-head {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+.nav-item-head image {
+  width: 100%;
+  height: 100%;
+}
+.nav-item-content {
+}
+
+.nav-text-title {
+  font-size: 34rpx;
+  display: block;
+}
+.nav-text-addr {
+  display: block;
+  margin-top: 14rpx;
+}
+.nav-text-desc {
+  font-size: 26rpx;
+  color: #515151;
+}
+
+.nav-item-tail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav-text-mark {
+  font-size: 26rpx;
+  width: 44rpx;
+  height: 44rpx;
+  color: white;
+  background: #ff5a00;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 44rpx;
+  float: left;
+}
+
+.ratestar {
+  margin-top: 8rpx;
+}
+
+/* 优惠列表 */
+.onsale-list .nav-text-desc {
+  color: #a9a9a9;
+  display: block;
+  margin-top: 20rpx;
+}
+.onsale-list .nav-text-date {
+  color: #d6d6d6;
+  margin-top: 15rpx;
+  display: block;
+  text-align: right;
+}
+
+/* 卡券列表 */
+.card-list .nav-item {
+  margin: 0 30rpx 30rpx 30rpx;
+  border-radius: 15rpx;
+  border-left: solid 20rpx #1AAD19;
+}
+.card-list .nav-item:nth-child(1) {
+  margin-top: 30rpx;
+}
+.card-list .nav-item-main {
+  margin: 0;
+  padding: 30rpx;
+}
+.card-list .nav-item-price {
+  font-size: 30rpx;
+  padding-right: 30rpx;
+  border-right: 1rpx solid #cccccc;
+}
+.card-list .nav-item-content {
+  margin-left: 30rpx;
+}
+.card-list .nav-text-title {
+  font-size: 30rpx;
+}
+.card-list .nav-text-desc {
+  font-size: 24rpx;
+  margin-top: 8rpx;
+  display: block;
+}
+.card-list .nav-item-tail {
+  justify-content: center;
+}
+.card-list .nav-item-tail button {
+  font-size: 30rpx;
+}

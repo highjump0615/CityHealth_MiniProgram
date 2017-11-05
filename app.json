@@ -1,0 +1,41 @@
+
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/near/near",
+    "pages/search/search",
+    "pages/profile/profile"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#353535",
+    "navigationBarTitleText": "都市保健",
+    "navigationBarTextStyle": "white"
+  },
+
+  "tabBar": {
+    "selectedColor": "#1AAD19",
+    "list": [
+      {
+        "pagePath": "pages/near/near",
+        "text": "附近",
+        "iconPath": "res/images/tab_near.png",
+        "selectedIconPath": "res/images/tab_near_selected.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "查找",
+        "iconPath": "res/images/tab_search.png",
+        "selectedIconPath": "res/images/tab_search_selected.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "res/images/tab_profile.png",
+        "selectedIconPath": "res/images/tab_profile_selected.png"
+      }
+    ]
+  }
+}

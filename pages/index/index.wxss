@@ -1,0 +1,27 @@
+/**index.wxss**/
+.container {
+  padding: 30rpx;
+}
+
+.logo {
+  margin-top: 180rpx;
+  width: 140rpx;
+  height: 126rpx;
+}
+
+.title {
+  margin-top: 150rpx;
+  font-size: 50rpx;
+}
+
+.desc {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+}
+
+navigator {
+  margin-top: 230rpx;
+  width: 100%;
+}
+
+

@@ -1,0 +1,44 @@
+/**app.wxss**/
+
+/* 引用星级评价 */
+@import "./components/ratestar/ratestar.wxss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+page {
+  background-color: #efeff4;
+}
+
+.color-theme {
+  color: #1AAD19;
+}
+
+/* 通用样式 */
+.mr-10 {
+  margin-right: 10rpx;
+}
+.text-align-right {
+  text-align: right;
+}
+
+scroll-view {
+  height: 100%;
+}
+
+/* Flex布局 */
+.flex-rest-width {
+  flex: 1;
+}
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

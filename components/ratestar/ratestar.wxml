@@ -1,0 +1,8 @@
+<!--components/ratestar/ratestar.wxml-->
+<template name="ratestar">
+  <view class="ratestar">
+    <block wx:for="{{[1,2,3,4,5]}}" wx:for-item="i">
+      <image src="../../res/images/rating_star.png" />
+    </block>
+  </view>
+</template>
