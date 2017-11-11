@@ -1,4 +1,7 @@
 // pages/near/near.js
+
+var config = require('../../config/config.js')
+
 Page({
 
   /**
@@ -14,11 +17,24 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    // 获取系统信息 
-    wx.getSystemInfo({
+
+    // 预支付
+    wx.request({
+      url: config.api.baseUrl,//请求地址
+      data: {
+        data: "{\"action\":\"getNearby\", \"location\":\"39.991922,116.472294\", \"pageNumber\":1, \"pageSize\":10, \"3rd_session\":\"691059841206005760\"}"
+      },
+      header: {//请求头
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST",//get为默认方法/POST
       success: function (res) {
-      }
-    }); 
+        console.log(res);
+      },
+      fail: function (err) {
+      },//请求失败
+      complete: function () { }//请求完成后执行的函数
+    });
   },
 
   /**

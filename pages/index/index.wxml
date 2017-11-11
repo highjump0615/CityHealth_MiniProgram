@@ -7,8 +7,6 @@
   <text class="title">都市保健场所信息大全</text>
 
   <!-- 进入 -->
-  <navigator url="../near/near" open-type="reLaunch">
-    <button type="primary">进入</button>
-  </navigator>
+  <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">进入</button>
 
 </view>
