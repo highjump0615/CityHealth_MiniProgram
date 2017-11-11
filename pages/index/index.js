@@ -33,13 +33,13 @@ Page({
         //
         // 建立后台回话
         //
-        var userInfo = app.globalData.userInfo;
+        var currentUser = app.globalData.currentUser;
         var paramData = {
           action: 'createSession',
           code: res.code,
-          nickname: userInfo.nickName,
-          avatarurl: userInfo.avatarUrl,
-          gender: userInfo.gender,
+          nickname: currentUser.nickName,
+          avatarurl: currentUser.avatarUrl,
+          gender: currentUser.gender,
           encryptedData: e.detail.encryptedData,
           iv: e.detail.iv
         };

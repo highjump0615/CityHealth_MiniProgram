@@ -77,3 +77,7 @@ page {
 .card-list .nav-item-tail button {
   font-size: 30rpx;
 }
+
+.disabled {
+  background: #b5b5b5;
+}

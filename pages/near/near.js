@@ -1,6 +1,7 @@
 // pages/near/near.js
-
-var config = require('../../config/config.js')
+var api = require('../../utils/api.js')
+const app = getApp();
+var Shop = require('../../model/Shop.js');
 
 Page({
 
@@ -10,30 +11,44 @@ Page({
   data: {
     // tab切换 
     currentTab: 0, 
+    // 加载参数
+    pageNumber: 1,
+    pageSize: 10,
+    // 数据
+    shops: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+    // 获取当前用户
+    if (app.globalData.currentUser) {
+      this.getCurrentLocation();
+    }
+    else {
+      app.userInfoReadyCallback = res => {
+        this.getCurrentLocation();
+      }
+    }
+  },
 
-    // 预支付
-    wx.request({
-      url: config.api.baseUrl,//请求地址
-      data: {
-        data: "{\"action\":\"getNearby\", \"location\":\"39.991922,116.472294\", \"pageNumber\":1, \"pageSize\":10, \"3rd_session\":\"691059841206005760\"}"
-      },
-      header: {//请求头
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      method: "POST",//get为默认方法/POST
+  /**
+   * 获取当前位置
+   */
+  getCurrentLocation: function() {
+    var that = this;
+    var currentUser = app.globalData.currentUser;
+
+    wx.getLocation({
+      type: 'wgs84',
       success: function (res) {
-        console.log(res);
+        currentUser.latitude = res.latitude;
+        currentUser.longitude = res.longitude;
       },
-      fail: function (err) {
-      },//请求失败
-      complete: function () { }//请求完成后执行的函数
+      complete: function () {
+        that.getShops();
+      }
     });
   },
 
@@ -101,6 +116,45 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
-  } 
+  },
+
+  getShops: function() {
+    var that = this;
+    var currentUser = app.globalData.currentUser;
+
+    //
+    // 获取附近店铺
+    //
+    var paramData = {
+      action: 'getNearby',
+      location: currentUser.getLocationFormatted(),
+      pageNumber: this.data.pageNumber,
+      pageSize: this.data.pageSize,
+      '3rd_session': app.globalData.thirdSession
+    };
+
+    api.postRequest(paramData, 
+      function success(res) {
+        if (res.data.result < 0) {
+          // 失败              
+        }
+
+        var shopObjs = [];
+        for (var i = 0; i < res.data.shops.length; i++) {
+          var shopNew = Shop.fromObject(res.data.shops[i]);
+          shopObjs.push(shopNew);
+        }
+
+        // 更新数据
+        that.setData({
+          shops: shopObjs
+        });
+      },
+      function fail(err) {
+      },
+      function complete() {
+      }
+    );
+  }
 
 })

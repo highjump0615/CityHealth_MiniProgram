@@ -20,3 +20,7 @@
   font-size: 26rpx;
   color: #515151;
 }
+
+.img-shop {
+  background: lightgray;
+}

@@ -1,8 +1,22 @@
 <!--components/ratestar/ratestar.wxml-->
+<wxs module="util">
+  var intToArray = function (value) {
+    var arr = [];
+    for (var i = 1; i <= value; i++) {
+      arr.append(i);
+    }
+
+    return arr;
+  }
+
+  module.exports.intToArray = intToArray;
+</wxs>
+
 <template name="ratestar">
   <view class="ratestar">
     <block wx:for="{{[1,2,3,4,5]}}" wx:for-item="i">
-      <image src="../../res/images/rating_star.png" />
+      <image wx:if="{{i < rating}}" src="../../res/images/rating_star.png" />
+      <image wx:else src="../../res/images/rating_star_gray.png" />
     </block>
   </view>
 </template>
