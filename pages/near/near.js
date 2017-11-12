@@ -1,5 +1,5 @@
 // pages/near/near.js
-var api = require('../../utils/api.js')
+var api = require('../../utils/api.js');
 const app = getApp();
 var Shop = require('../../model/Shop.js');
 
@@ -136,7 +136,8 @@ Page({
     api.postRequest(paramData, 
       function success(res) {
         if (res.data.result < 0) {
-          // 失败              
+          // 失败
+          return;
         }
 
         var shopObjs = [];

@@ -2,6 +2,8 @@
 
 /* 引用星级评价 */
 @import "./components/ratestar/ratestar.wxss";
+/* 引用店铺列表 */
+@import "./pages/shop/shoplist.wxss";
 /* 引用店铺信息 */
 @import "./pages/shop/shoplistitem.wxss";
 /* 引用卡券信息 */

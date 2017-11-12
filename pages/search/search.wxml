@@ -5,9 +5,9 @@
     <!-- 区域 -->
     <navigator url="districts">
       <view class="nav-item bottom-border">
-        <view class="flex-row flex-center flex-rest-width" bindtap="gotoWifiList">
+        <view class="flex-row flex-center flex-rest-width">
           <text class="text-name">区域</text>
-          <text class="nav-item-content flex-rest-width"></text>
+          <text class="nav-item-content flex-rest-width">{{district.name}}</text>
         </view>
         <view class="flex-row flex-center">
           <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
@@ -16,13 +16,15 @@
     </navigator>
 
     <!-- 商圈 -->
-    <view class="nav-item bottom-border">
-      <view class="flex-row flex-center flex-rest-width" bindtap="gotoWifiList">
-        <text class="text-name">商圈</text>
-        <text class="nav-item-content flex-rest-width"></text>
-      </view>
-      <view class="flex-row flex-center">
-        <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+    <view hover-class="navigator-hover" bindtap="onSelectArea">
+      <view class="nav-item bottom-border">
+        <view class="flex-row flex-center flex-rest-width">
+          <text class="text-name">商圈</text>
+          <text class="nav-item-content flex-rest-width">{{area.name}}</text>
+        </view>
+        <view class="flex-row flex-center">
+          <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+        </view>
       </view>
     </view>
 
@@ -35,6 +37,6 @@
     </view>
   </view>
 
-  <button type="primary" bindtap="doConfigure">确定</button>
+  <button type="primary" bindtap="searchShop">确定</button>
 
 </view>

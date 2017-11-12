@@ -1,0 +1,7 @@
+<!--pages/search/result.wxml-->
+
+<!-- 引用店铺信息 -->
+<import src="../shop/shoplist.wxml" />
+
+<!-- 店家列表 -->
+<template is="shoplist" data="{{shops}}" />

@@ -45,17 +45,6 @@ page {
   float: left;
 }
 
-/* 店家列表 */
-.shop-list .nav-item {
-  align-items: stretch;
-}
-.shop-list .nav-item-tail {
-  justify-content: space-between;
-}
-.shop-list .nav-item-content {
-  margin-left: 0;
-}
-
 /* 优惠列表 */
 .onsale-list .nav-text-desc {
   color: #a9a9a9;

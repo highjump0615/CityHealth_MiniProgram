@@ -14,6 +14,12 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+var getPreviousPage = function() {
+  var pages = getCurrentPages();
+  return pages[pages.length - 2];
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  getPreviousPage: getPreviousPage
 }

@@ -6,6 +6,7 @@
     "pages/near/near",
     "pages/search/search",
     "pages/search/districts",
+    "pages/search/result",
     "pages/profile/profile",
     "pages/profile/mycardlist",
     "pages/profile/mycollectlist",
