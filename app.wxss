@@ -114,3 +114,15 @@ scroll-view {
 .view-form input {
   font-size: 32rpx;
 }
+
+/* 页面 */
+.no-notice {
+  text-align: center;
+  margin-top: 300rpx;
+  font-size: 28rpx;
+  color: #a0a0a0;
+}
+
+.disabled {
+  background: #b5b5b5;
+}

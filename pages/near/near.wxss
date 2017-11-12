@@ -33,18 +33,6 @@ page {
   border-bottom: 1px solid #cccccc;
 }
 
-.nav-text-mark {
-  font-size: 26rpx;
-  width: 44rpx;
-  height: 44rpx;
-  color: white;
-  background: #ff5a00;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 44rpx;
-  float: left;
-}
-
 /* 优惠列表 */
 .onsale-list .nav-text-desc {
   color: #a9a9a9;
@@ -65,8 +53,4 @@ page {
 /* 卡券列表 */
 .card-list .nav-item-tail button {
   font-size: 30rpx;
-}
-
-.disabled {
-  background: #b5b5b5;
 }

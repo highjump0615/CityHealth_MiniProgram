@@ -5,3 +5,7 @@
 
 <!-- 店家列表 -->
 <template is="shoplist" data="{{shops}}" />
+
+<view wx:if="{{showEmptyNotice}}" class="no-notice">
+  <text>暂时还没有匹配的店铺</text>
+</view>

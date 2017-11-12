@@ -60,7 +60,7 @@ Page({
     }
     
     wx.navigateTo({
-      url: 'result?district=' + this.data.district.code + '&aera=' + this.data.area.code + '&name=' + this.data.shopName
+      url: 'result?district=' + this.data.district.code + '&area=' + this.data.area.code + '&name=' + this.data.shopName
     });
   },
 

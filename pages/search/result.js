@@ -1,19 +1,71 @@
 // pages/search/result.js
+var api = require('../../utils/api.js');
+const app = getApp();
+var Shop = require('../../model/Shop.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    // 加载参数
+    pageNumber: 1,
+    pageSize: 10,
     // 数据
-    shops: []
+    shops: [],
+    showEmptyNotice: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    var currentUser = app.globalData.currentUser;
+
+    var district = options.district;
+    var area = options.area;
+    var name = options.name;
+
+    //
+    // 获取附近店铺
+    //
+    var paramData = {
+      action: 'queryShop',
+      district: district,
+      area: area,
+      name: name,
+      location: currentUser.getLocationFormatted(),
+      pageNumber: this.data.pageNumber,
+      pageSize: this.data.pageSize,
+      '3rd_session': app.globalData.thirdSession
+    };
+
+    api.postRequest(paramData, 
+      function success(res) {
+        if (res.data.result < 0) {
+          // 失败
+          return;
+        }
+
+        var shopObjs = [];
+        for (var i = 0; i < res.data.shops.length; i++) {
+          var shopNew = Shop.fromObject(res.data.shops[i]);
+          shopObjs.push(shopNew);
+        }
+
+        // 更新数据
+        that.setData({
+          shops: shopObjs,
+          showEmptyNotice: shopObjs.length <= 0
+        });
+      },
+      function fail(err) {
+      },
+      function complete() {
+      }
+    );
   },
 
   /**
