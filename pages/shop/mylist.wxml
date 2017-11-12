@@ -10,12 +10,12 @@
     </navigator>
   </view>
   <view class="nav-items">
-    <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
+    <block wx:for="{{shops}}" wx:for-item="shop" wx:key="">
       <view class="nav-item bottom-border">
         <!-- 基础信息 -->
         <navigator url="../shop/shop">
           <view class="flex-row">
-            <template is="shoplistitem" />
+            <template is="shoplistitem" data="{{...shop}}" />
           </view>
         </navigator>
 
@@ -49,3 +49,7 @@
     </block>
   </view>
 </scroll-view>
+
+<view wx:if="{{showEmptyNotice}}" class="no-notice">
+  <text>暂时没有我的店铺</text>
+</view>

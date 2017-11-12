@@ -10,7 +10,7 @@
 <view class="nav-items">
   <!-- 我的收藏 -->
   <navigator url="mycollectlist">
-    <view class="nav-item bottom-border" bindtap="gotoCureList">
+    <view class="nav-item bottom-border">
       <text class="text-name flex-rest-width">我的收藏</text>
       <view class="flex-row flex-center">
         <text class="text-right">{{userInfo.favouriteCount}}</text>
