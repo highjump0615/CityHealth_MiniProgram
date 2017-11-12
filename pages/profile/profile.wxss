@@ -22,3 +22,7 @@
 .nav-items {
   margin-top: 30rpx;
 }
+.nav-item .text-right {
+  font-size: 30rpx;
+  color: #a0a0a0;
+}

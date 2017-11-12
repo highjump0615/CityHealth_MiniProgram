@@ -7,6 +7,8 @@ var User = function (userInfo) {
   // 地理位置
   this.latitude = 0;
   this.longitude = 0;
+
+  // 数据
 }
 
 User.prototype = {
