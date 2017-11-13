@@ -1,5 +1,10 @@
 /* pages/profile/mycollectlist.wxss */
 
+page {
+  background-color: white;
+  height: 100%;
+}
+
 /* 店家列表 */
 .nav-item {
   margin-right: 0;

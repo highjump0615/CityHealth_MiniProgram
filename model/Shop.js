@@ -1,31 +1,30 @@
 var config = require('../config/config.js');
 
-var Shop = function (id, pictureUrl, address, name, card, rating, discount, distance) {
-  // 初始化
-  this.id = id;
-  this.pictureUrl = config.baseUrl + pictureUrl;
-  this.address = address;
-  this.name = name;
-  this.card = card;
-  this.rating = rating;
-  this.discount = discount;
-  this.distance = distance;
+var Shop = function () {
+  this.images = [];
+
+  // 显示
+  this.isExpended = false;
 }
 
 Shop.fromObject = function(object) {
-  return new this(
-    object.id,
-    object.pictureUrl,
-    object.address,
-    object.name,
-    object.card,
-    object.ratingall,
-    object.discount,
-    object.distance
-  );
+  var shopNew = new this();
+  shopNew.setBasicData(object);
+
+  return shopNew;
 }
 
 Shop.prototype = {
+  setBasicData: function (object) {
+    this.id = object.shopid;
+    this.pictureUrl = config.baseUrl + object.pictureUrl;
+    this.address = object.address;
+    this.name = object.name;
+    this.card = object.card;
+    this.rating = object.rating;
+    this.discount = object.discount;
+    this.distance = object.distance;
+  }
 }
 
 module.exports = Shop;

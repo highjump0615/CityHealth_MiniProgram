@@ -6,7 +6,7 @@
   <scroll-view scroll-y="true">
     <view class="nav-items shop-list">
       <block wx:for="{{shops}}" wx:for-item="shop" wx:key="">
-        <navigator url="../shop/shop">
+        <navigator url="../shop/shop?id={{shop.id}}">
           <view class="nav-item bottom-border">
             <!-- 基础信息 -->
             <template is="shoplistitem" data="{{...shop}}" />

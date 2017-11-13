@@ -16,15 +16,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 获取当前用户
-    if (app.globalData.currentUser) {
-      this.getUserInfoDetail();
-    }
-    else {
-      app.userInfoReadyCallback = res => {
-        this.getUserInfoDetail();
-      }
-    }
   },
 
   /**
@@ -80,7 +71,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    // 获取当前用户
+    if (app.globalData.currentUser) {
+      this.getUserInfoDetail();
+    }
+    else {
+      app.userInfoReadyCallback = res => {
+        this.getUserInfoDetail();
+      }
+    }
   },
 
   /**
