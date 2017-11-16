@@ -55,7 +55,7 @@ Page({
         }
 
         // 评价
-        shopNew.ratingService = res.data.ratingSerice;
+        shopNew.ratingService = res.data.ratingService;
         shopNew.ratingFacilities = res.data.ratingFacilities;
         shopNew.ratingCost = res.data.ratingCost;
 

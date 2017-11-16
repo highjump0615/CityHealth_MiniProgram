@@ -6,17 +6,14 @@ function postRequest(param, success, fail, complete) {
 
   wx.request({
     url: config.api.baseUrl,
-    data: {
-      data: strData
-    },
-    header: {//请求头
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
+    data: param,
     method: "POST",//get为默认方法/POST
     success: function(res) {
       console.log(res.data);
 
-      success(res);
+      if (res.data.result !== undefined) {
+        success(res);
+      }
     },
     fail: function (err) {
       console.log(err);
