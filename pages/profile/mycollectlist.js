@@ -127,9 +127,11 @@ Page({
   },
   onMoreTouchStart: function (e) {
     gbIgnorePageTap = true;
+    console.log('onMoreTouchStart');
   },
   onMoreTouchEnd: function (e) {
     gbIgnorePageTap = false;
+    console.log('onMoreTouchEnd');
   },
 
   /**
@@ -150,6 +152,10 @@ Page({
     this.setData({
       shops: this.data.shops
     });
+  },
+
+  onShop: function () {
+    console.log('asdf');
   },
 
   /**

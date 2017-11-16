@@ -9,10 +9,11 @@
         <view class="slide-item bottom-border flex-row {{shop.isExpended ? 'touch-move-active' : ''}}">
           <!-- 滑动前景 -->
           <view class="slide-front">
-            <!-- <navigator url="../shop/shop"> -->
               <view class="nav-item">
-                <!-- 基础信息 -->
-                <template is="shoplistitem" data="{{...shop}}" />
+                <navigator url="../shop/shop?id={{shop.id}}" class="flex-row flex-rest-width">
+                  <!-- 基础信息 -->
+                  <template is="shoplistitem" data="{{...shop}}" />
+                </navigator>
 
                 <!-- 更多 -->
                 <view class="nav-item-tail flex-row flex-center" hover-stop-propagation="true" data-index="{{index}}"
@@ -20,7 +21,6 @@
                   <image src="../../res/images/but_3dots.png"></image>
                 </view>
               </view>
-            <!-- </navigator> -->
           </view>
 
           <!-- 滑动背景 -->

@@ -6,7 +6,7 @@
   </view>
 
   <view class="nav-items">
-    <block wx:for="{{values}}" wx:for-item="value">
+    <block wx:for="{{values}}" wx:for-item="value" wx:key="">
       <navigator open-type="navigateBack">
         <view class="nav-item bottom-border" data-index="{{index}}" bindtap="onValue">
           <text>{{value.name}}</text>
