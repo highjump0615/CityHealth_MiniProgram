@@ -1,0 +1,23 @@
+
+/* 店家列表 */
+.shop-list .nav-item {
+  align-items: stretch;
+}
+.shop-list .nav-item-tail {
+  justify-content: space-between;
+}
+.shop-list .nav-item-content {
+  margin-left: 0;
+}
+
+.nav-text-mark {
+  font-size: 26rpx;
+  width: 44rpx;
+  height: 44rpx;
+  color: white;
+  background: #ff5a00;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 44rpx;
+  float: left;
+}

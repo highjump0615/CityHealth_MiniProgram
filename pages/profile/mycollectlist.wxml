@@ -1,32 +1,40 @@
 <!--pages/profile/mycollectlist.wxml-->
 
-<import src="../shop/shoplistitem.wxml" />
+<import src="../shop/shoplistitem.wxml"  />
 
-<scroll-view scroll-y="true">
-  <view class="nav-items">
-    <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
-      <view class="slide-item bottom-border flex-row">
-        <!-- 滑动前景 -->
-        <view class="slide-front">
-          <!-- <navigator url="../shop/shop"> -->
+<view class="container" bindtouchstart="pageTap">
+  <scroll-view scroll-y="true">
+    <view class="nav-items">
+      <block wx:for="{{shops}}" wx:for-item="shop" wx:key="">
+        <view class="slide-item bottom-border flex-row {{shop.isExpended ? 'touch-move-active' : ''}}">
+          <!-- 滑动前景 -->
+          <view class="slide-front">
             <view class="nav-item">
-              <!-- 基础信息 -->
-              <template is="shoplistitem" />
+              <navigator url="../shop/shop?id={{shop.id}}" class="flex-row flex-rest-width">
+                <!-- 基础信息 -->
+                <template is="shoplistitem" data="{{...shop}}" />
+              </navigator>
 
               <!-- 更多 -->
-              <view class="nav-item-tail flex-row flex-center" bindtap="onButMore" hover-stop-propagation="true">
+              <view class="nav-item-tail flex-row flex-center" hover-stop-propagation="true" data-index="{{index}}"
+                    bindtap="onButMore" bindtouchstart="onMoreTouchStart" bindtouchend="onMoreTouchEnd">
                 <image src="../../res/images/but_3dots.png"></image>
               </view>
             </view>
-          <!-- </navigator> -->
-        </view>
+          </view>
 
-        <!-- 滑动背景 -->
-        <view class="slide-back flex-row">
-          <button class="but-transparent flex-row flex-center">取消收藏</button>
+          <!-- 滑动背景 -->
+          <view class="slide-back flex-row">
+            <button class="but-transparent flex-row flex-center" data-index="{{index}}"
+                    bindtap="onButDelete" bindtouchstart="onMoreTouchStart" bindtouchend="onMoreTouchEnd"
+            >取消收藏</button>
+          </view>
         </view>
-      </view>
-    </block>
+      </block>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{showEmptyNotice}}" class="no-notice">
+    <text>暂时还没有收藏的店铺</text>
   </view>
-</scroll-view>
-
+</view>

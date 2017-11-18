@@ -1,55 +1,75 @@
 
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
+var api = require('../../utils/api.js')
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+    // 检查3rd session
+    var thirdSession = wx.getStorageSync('thirdSession');
+    if (thirdSession) {
+      this.set3rdSession(thirdSession);
+    }    
+  },
+  getPhoneNumber: function(e) {
+    var that = this;
+
+    if (e.detail.errMsg != "getPhoneNumber:ok") {
+      wx.showModal({
+        title: '获取手机号失败',
+        content: '获取不到该微信手机号',
+        showCancel: false
+      });
+
+      return;
     }
+
+    // 登录
+    wx.login({
+      success: res => {
+        //
+        // 建立后台回话
+        //
+        var currentUser = app.globalData.currentUser;
+        var paramData = {
+          action: 'createSession',
+          code: res.code,
+          nickname: currentUser.nickName,
+          avatarurl: currentUser.avatarUrl,
+          gender: currentUser.gender,
+          encryptedData: e.detail.encryptedData,
+          iv: e.detail.iv
+        };
+
+        api.postRequest(paramData, 
+          function success(res) {
+            if (res.data.result < 0) {
+              // 失败              
+            }
+            wx.setStorageSync('thirdSession', res.data['3rd_session']);
+            that.set3rdSession(res.data['3rd_session']);
+          },
+          function fail(err) {
+          },
+          function complete() {
+          }
+        );
+      }
+    });
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
+
+  /**
+   * 设置Session
+   */
+  set3rdSession: function(session) {
+    app.globalData.thirdSession = session;
+
+    // 跳转转到附近页
+    wx.reLaunch({
+      url: '../near/near'
+    });
+  }
 })

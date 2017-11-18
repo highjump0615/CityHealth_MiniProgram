@@ -1,11 +1,10 @@
-// pages/profile/mycollectlist.js
+// pages/search/result.js
 var api = require('../../utils/api.js');
 const app = getApp();
 var Shop = require('../../model/Shop.js');
 
-var gbIgnorePageTap = false;
-
 Page({
+
   /**
    * 页面的初始数据
    */
@@ -25,11 +24,18 @@ Page({
     var that = this;
     var currentUser = app.globalData.currentUser;
 
+    var district = options.district;
+    var area = options.area;
+    var name = options.name;
+
     //
-    // 提取我的收藏
+    // 获取附近店铺
     //
     var paramData = {
-      action: 'getMyFavorite',
+      action: 'queryShop',
+      district: district,
+      area: area,
+      name: name,
       location: currentUser.getLocationFormatted(),
       pageNumber: this.data.pageNumber,
       pageSize: this.data.pageSize,
@@ -109,87 +115,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  /**
-   * 点击更多
-   */
-  onButMore: function (e) {
-    var shop = this.data.shops[e.currentTarget.dataset.index];
-    shop.isExpended = !shop.isExpended;
-
-    // 更新数据
-    this.setData({
-      shops: this.data.shops
-    });
-
-    return false;
-  },
-  onMoreTouchStart: function (e) {
-    gbIgnorePageTap = true;
-    console.log('onMoreTouchStart');
-  },
-  onMoreTouchEnd: function (e) {
-    gbIgnorePageTap = false;
-    console.log('onMoreTouchEnd');
-  },
-
-  /**
-   * 点击屏幕
-   */
-  pageTap: function() {
-    // 点击了操作按钮, 忽略
-    if (gbIgnorePageTap) {
-      return;
-    }
-
-    // 关闭更多选项
-    for (var i = 0; i < this.data.shops.length; i++) {
-      this.data.shops[i].isExpended = false;
-    }
-
-    // 更新数据
-    this.setData({
-      shops: this.data.shops
-    });
-  },
-
-  onShop: function () {
-    console.log('asdf');
-  },
-
-  /**
-   * 取消关注
-   */
-  onButDelete: function (e) {
-    var that = this;
-    var shop = this.data.shops[e.currentTarget.dataset.index];
-
-    var paramData = {
-      action: 'deleteCollection',
-      '3rd_session': app.globalData.thirdSession,
-      shopid: shop.id
-    };
-
-    api.postRequest(paramData, 
-      function success(res) {
-        if (res.data.result < 0) {
-          // 失败
-          return;
-        }
-        
-        // 删除该店铺
-        that.data.shops.splice(e.currentTarget.dataset.index, 1);
-
-        // 更新数据
-        that.setData({
-          shops: that.data.shops
-        });
-      },
-      function fail(err) {
-      },
-      function complete() {
-      }
-    );
   }
 })

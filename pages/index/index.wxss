@@ -23,7 +23,7 @@ page {
   font-size: 32rpx;
 }
 
-navigator {
+button {
   margin-top: 230rpx;
   width: 100%;
 }

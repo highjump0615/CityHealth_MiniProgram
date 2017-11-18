@@ -1,7 +1,7 @@
 <!--pages/near/near.wxml-->
 
 <!-- 引用店铺信息 -->
-<import src="../shop/shoplistitem.wxml" />
+<import src="../shop/shoplist.wxml" />
 <!-- 引用卡券信息 -->
 <import src="cardlistitem.wxml" />
 
@@ -17,34 +17,14 @@
 
     <swiper-item>
       <!-- 店家列表 -->
-      <scroll-view scroll-y="true">
-        <view class="nav-items shop-list">
-          <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
-            <navigator url="../shop/shop">
-              <view class="nav-item bottom-border">
-                <!-- 基础信息 -->
-                <template is="shoplistitem" />
-
-                <view class="nav-item-tail flex-row flex-vert">
-                  <!-- 优惠标志 -->
-                  <view>
-                    <view class="nav-text-mark mr-10">卡</view>
-                    <view class="nav-text-mark">惠</view>
-                  </view>
-                  <text class="nav-text-desc text-align-right">12km</text>
-                </view>
-              </view>
-            </navigator>
-          </block>
-        </view>
-      </scroll-view>
+      <template is="shoplist" data="{{shops}}" />
     </swiper-item>
 
     <swiper-item>
       <!-- 优惠列表 -->
       <scroll-view scroll-y="true">
         <view class="nav-items onsale-list">
-          <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
+          <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i" wx:key="">
             <view class="nav-item">
               <view class="nav-item-content flex-rest-width">
                 <text class="nav-text-title">都市保健</text>
@@ -61,7 +41,7 @@
       <!-- 卡券列表 -->
       <scroll-view scroll-y="true">
         <view class="nav-items card-list">
-          <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
+          <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i" wx:key="">
             <view class="nav-item bottom-border">
               <!-- 基础信息 -->
               <template is="cardlistitem" />

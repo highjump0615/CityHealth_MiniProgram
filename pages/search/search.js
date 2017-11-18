@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    district: null,
+    area: null,
+    shopName: ''
   },
 
   /**
@@ -13,6 +15,53 @@ Page({
    */
   onLoad: function (options) {
   
+  },
+
+  /**
+   * 选择
+   */
+  onSelectArea: function() {
+    if (this.data.district) {
+      wx.navigateTo({
+        url: 'districts?district=' + this.data.district.code
+      });
+    }
+  },
+
+  /**
+   * 输入店名
+   */
+  onInputName: function(e) {
+    this.setData({
+      shopName: e.detail.value
+    });
+  },
+
+  /**
+   * 搜索店铺
+   */
+  searchShop: function() {
+    // 检查
+    if (!this.data.district) {
+      wx.showModal({
+        title: '请选择区域',
+        showCancel: false
+      });
+
+      return;
+    }
+    if (!this.data.area) {
+      wx.showModal({
+        title: '请选择商圈',
+        showCancel: false
+      });
+
+      return;
+    }
+    
+    wx.navigateTo({
+      url: 'result?district=' + this.data.district.code + '&area=' + this.data.area.code + '&name=' + this.data.shopName
+    });
   },
 
   /**

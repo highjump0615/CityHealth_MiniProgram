@@ -6,10 +6,10 @@
   </view>
 
   <view class="nav-items">
-    <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i">
+    <block wx:for="{{values}}" wx:for-item="value" wx:key="">
       <navigator open-type="navigateBack">
-        <view class="nav-item bottom-border">
-          <text>全北京</text>
+        <view class="nav-item bottom-border" data-index="{{index}}" bindtap="onValue">
+          <text>{{value.name}}</text>
         </view>
       </navigator>
     </block>

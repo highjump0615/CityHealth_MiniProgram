@@ -4,40 +4,34 @@
   <view class="content-main">
       <scroll-view scroll-y="true">
         <view class="p-30">
-          <text class="text-title">都市保健</text>
+          <text class="text-title">{{shop.name}}</text>
 
           <view class="flex-row flex-center summary">
             <view>
-              <text class="mr-40">服务： 优</text>
-              <text class="mr-40">环境： 优</text>
-              <text>性价比： 优</text>
+              <text class="mr-40">服务： {{shop.ratingService}}</text>
+              <text class="mr-40">环境： {{shop.ratingFacilities}}</text>
+              <text>性价比： {{shop.ratingCost}}</text>
             </view>
             <button class="color-theme but-transparent">发表点评</button>
           </view>
 
           <!-- 图片 -->
-          <swiper indicator-dots="true" indicator-color="#efeff4" indicator-active-color="#1AAD19" autoplay="true">
-            <swiper-item>
-              <image src="../../res/images/img_default_shop_detail.png" />
-            </swiper-item>
-            <swiper-item>
-              <image src="../../res/images/img_default_shop_detail.png" />
-            </swiper-item>
-            <swiper-item>
-              <image src="../../res/images/img_default_shop_detail.png" />
-            </swiper-item>
+          <swiper wx:if="{{shop.images.length > 0}}" indicator-dots="true" indicator-color="#efeff4" indicator-active-color="#1AAD19" autoplay="true">
+            <block wx:for="{{shop.images}}" wx:for-item="image" wx:key="">
+              <swiper-item>
+                <image src="{{image.url}}" />
+              </swiper-item>
+            </block>
           </swiper>
 
           <!-- 店铺介绍 -->
           <view class="intro">
             <text>店铺介绍</text>
-            <text>香薰SPA**********298元/60分钟</text>
-            <text>水疗套餐*********398元/80分钟</text>
-            <text>水疗套餐*********398元/80分钟</text>
-            <text>电话：13011110000</text>
-            <text>QQ ：13011110000</text>
-            <text>微信：13011110000</text>
-            <text>地址：北京市朝阳区东亚望京中心</text>
+            <text>{{shop.intro}}</text>
+            <text>电话：{{shop.phone}}</text>
+            <text>QQ ：{{shop.qq}}</text>
+            <text>微信：{{shop.wechat}}</text>
+            <text>地址：{{shop.address}}</text>
           </view>
         </view>
       </scroll-view>
@@ -47,13 +41,14 @@
   <view class="view-bottom">
     <view class="flex-row flex-center">
       <view>
-        <text class="mr-40">访问： 83</text>
-        <text class="mr-40">收藏： 10</text>
-        <text>点评： 3</text>
+        <text class="mr-40">访问： {{shop.countBrowse}}</text>
+        <text class="mr-40">收藏： {{shop.countCollect}}</text>
+        <text>点评： {{shop.countRating}}</text>
       </view>
-      <button class="but-transparent but-collect flex-row flex-center">
+      <button class="but-transparent but-collect flex-row flex-center" bindtap="collectShop">
         <image src="../../res/images/but_collect.png" class="mr-10" />
-        <text>收藏</text>
+        <text wx:if="{{shop.isCollected}}">取消收藏</text>
+        <text wx:else>收藏</text>
       </button>
     </view>
   </view>

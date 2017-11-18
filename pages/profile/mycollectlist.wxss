@@ -1,8 +1,18 @@
 /* pages/profile/mycollectlist.wxss */
 
+page {
+  background-color: white;
+  height: 100%;
+}
+
 /* 店家列表 */
 .nav-item {
-  margin-right: 0;
+  margin: 0;
+  padding: 0;
+  align-items: inherit; 
+}
+.nav-item navigator {
+  padding: 20rpx 0rpx 20rpx 30rpx;
 }
 .nav-item-content {
   margin-left: 0;

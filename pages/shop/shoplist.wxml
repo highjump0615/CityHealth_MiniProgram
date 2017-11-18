@@ -1,0 +1,30 @@
+<!-- 引用店铺信息 -->
+<import src="../shop/shoplistitem.wxml" />
+
+<!-- 店家列表 -->
+<template name="shoplist">
+  <scroll-view scroll-y="true">
+    <view class="nav-items shop-list">
+      <block wx:for="{{shops}}" wx:for-item="shop" wx:key="">
+        <navigator url="../shop/shop?id={{shop.id}}">
+          <view class="nav-item bottom-border">
+            <!-- 基础信息 -->
+            <template is="shoplistitem" data="{{...shop}}" />
+
+            <view class="nav-item-tail flex-row flex-vert">
+              <!-- 优惠标志 -->
+              <view>
+                <view wx:if="{{shop.card > 0}}" class="nav-text-mark mr-10">卡</view>
+                <view wx:else class="nav-text-mark mr-10 disabled">卡</view>
+
+                <view wx:if="{{shop.discount > 0}}" class="nav-text-mark">惠</view>
+                <view wx:else class="nav-text-mark disabled">惠</view>
+              </view>
+              <text class="nav-text-desc text-align-right">{{shop.distance}}m</text>
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </scroll-view>
+</template>
