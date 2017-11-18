@@ -1,6 +1,6 @@
 // pages/near/near.js
-var api = require('../../utils/api.js');
 const app = getApp();
+var api = require('../../utils/api.js');
 var Shop = require('../../model/Shop.js');
 
 Page({
@@ -41,7 +41,7 @@ Page({
     var currentUser = app.globalData.currentUser;
 
     wx.getLocation({
-      type: 'wgs84',
+      type: 'gcj02',    //wgs84',
       success: function (res) {
         currentUser.latitude = res.latitude;
         currentUser.longitude = res.longitude;
