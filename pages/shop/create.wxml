@@ -6,7 +6,7 @@
     <view class="nav-item bottom-border">
       <view class="flex-row flex-rest-width">
         <text class="text-name">店名</text>
-        <input class="nav-item-content flex-rest-width" placeholder="店铺名称" />
+        <input class="nav-item-content flex-rest-width" placeholder="店铺名称" bindinput="onInputName" />
       </view>
     </view>
 
@@ -52,7 +52,7 @@
   
   </view>
 
-  <button type="primary" bindtap="doConfigure">确定</button>
+  <button type="primary" bindtap="saveShop" loading="{{showLoading}}">确定</button>
   
 </view>
   

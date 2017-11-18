@@ -32,7 +32,7 @@
     <view class="nav-item bottom-border">
       <view class="flex-row flex-rest-width">
         <text class="text-name">店名</text>
-        <input class="nav-item-content flex-rest-width" placeholder="请输入" />
+        <input class="nav-item-content flex-rest-width" placeholder="请输入" bindinput="onInputName" />
       </view>
     </view>
   </view>

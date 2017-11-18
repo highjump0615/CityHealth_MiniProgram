@@ -72,6 +72,11 @@ scroll-view {
 .but-transparent::after {
   border: none;
 }
+button[loading]::before {
+  width: 24px;
+  height: 24px;
+  margin-right: 20rpx;
+}
 
 
 /* 列表样式 */

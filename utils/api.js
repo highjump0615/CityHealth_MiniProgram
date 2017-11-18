@@ -1,9 +1,7 @@
 var config = require('../config/config.js')
 
 function postRequest(param, success, fail, complete) {
-  var strData = JSON.stringify(param);
-  console.log(strData);
-
+  
   wx.request({
     url: config.api.baseUrl,
     data: param,
