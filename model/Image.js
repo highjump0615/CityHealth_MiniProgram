@@ -2,7 +2,15 @@ var config = require('../config/config.js');
 
 var Image = function (id, path) {
   this.id = id;
-  this.url = config.baseUrl + path;
+  //this.url = config.image.baseUrl + path;
+
+  if (path.indexOf('nopic') > -1) {
+    this.url = config.baseUrl + path;
+  } else if (path.substr(0, 1) == '/') {
+    this.url = config.image.baseUrl + path;
+  } else {
+    this.url = config.image.baseUrl + '/' + path;
+  }
 }
 
 Image.prototype = {

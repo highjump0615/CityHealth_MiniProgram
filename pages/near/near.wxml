@@ -6,22 +6,25 @@
 <import src="cardlistitem.wxml" />
 
 <view class="container">
+  <!--
   <view class="swiper-tab">
     <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">店家</view>
     <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">优惠</view>
     <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">卡券</view>
     <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">招聘</view>
   </view>
+-->
 
   <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange">
 
+    <!-- 店家列表 -->
     <swiper-item>
-      <!-- 店家列表 -->
       <template is="shoplist" data="{{shops}}" />
     </swiper-item>
 
+    <!-- 优惠列表 -->
+    <!--
     <swiper-item>
-      <!-- 优惠列表 -->
       <scroll-view scroll-y="true">
         <view class="nav-items onsale-list">
           <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i" wx:key="">
@@ -36,14 +39,14 @@
         </view>
       </scroll-view>
     </swiper-item>
-
+-->
+    <!-- 卡券列表 -->
+    <!--
     <swiper-item>
-      <!-- 卡券列表 -->
       <scroll-view scroll-y="true">
         <view class="nav-items card-list">
           <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="i" wx:key="">
             <view class="nav-item bottom-border">
-              <!-- 基础信息 -->
               <template is="cardlistitem" />
 
               <view class="nav-item-tail flex-row flex-vert">
@@ -54,5 +57,6 @@
         </view>
       </scroll-view>
     </swiper-item>
+    -->
   </swiper>
 </view>

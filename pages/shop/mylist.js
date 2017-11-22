@@ -1,6 +1,6 @@
 // pages/shop/mylist.js
-var api = require('../../utils/api.js');
 const app = getApp();
+var api = require('../../utils/api.js');
 var Shop = require('../../model/Shop.js');
 
 Page({
