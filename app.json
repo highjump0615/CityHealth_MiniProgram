@@ -20,7 +20,8 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#353535",
     "navigationBarTitleText": "都市保健",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#efeff4"
   },
 
   "tabBar": {

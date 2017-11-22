@@ -3,7 +3,7 @@
 
 <!-- 店家列表 -->
 <template name="shoplist">
-  <scroll-view scroll-y="true">
+  <view>
     <view class="nav-items shop-list">
       <block wx:for="{{shops}}" wx:for-item="shop" wx:key="">
         <navigator url="../shop/shop?id={{shop.id}}">
@@ -26,5 +26,5 @@
         </navigator>
       </block>
     </view>
-  </scroll-view>
+  </view>
 </template>

@@ -9,8 +9,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // tab切换 
-    currentTab: 0, 
     // 加载参数
     pageNumber: 1,
     pageSize: 10,
@@ -47,7 +45,7 @@ Page({
         currentUser.longitude = res.longitude;
       },
       complete: function () {
-        that.getShops();
+        that.getShops(true);
       }
     });
   },
@@ -84,14 +82,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    this.getShops(true);
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    this.getShops(false);
   },
 
   /**
@@ -101,26 +99,17 @@ Page({
   
   },
 
-  // 滑动切换tab 
-  bindChange: function (e) {
-    var that = this;
-    that.setData({ currentTab: e.detail.current });
-  },
-  // 点击tab切换 
-  swichNav: function (e) {
-    var that = this;
-    if (this.data.currentTab === e.target.dataset.current) {
-      return false;
-    } else {
-      that.setData({
-        currentTab: e.target.dataset.current
-      })
-    }
-  },
-
-  getShops: function() {
+  getShops: function(isRefresh) {
     var that = this;
     var currentUser = app.globalData.currentUser;
+    var nPageNumber = this.data.pageNumber + 1;
+
+    if (isRefresh) {
+      nPageNumber = 1;
+    }
+
+    // 显示正在加载
+    wx.showNavigationBarLoading();
 
     //
     // 获取附近店铺
@@ -128,7 +117,7 @@ Page({
     var paramData = {
       action: 'getNearby',
       location: currentUser.getLocationFormatted(),
-      pageNumber: this.data.pageNumber,
+      pageNumber: nPageNumber,
       pageSize: this.data.pageSize,
       '3rd_session': app.globalData.thirdSession
     };
@@ -140,7 +129,11 @@ Page({
           return;
         }
 
-        var shopObjs = [];
+        var shopObjs = that.data.shops;
+        if (isRefresh) {
+          shopObjs = [];
+        }
+        
         for (var i = 0; i < res.data.shops.length; i++) {
           var shopNew = Shop.fromObject(res.data.shops[i]);
           shopObjs.push(shopNew);
@@ -154,6 +147,9 @@ Page({
       function fail(err) {
       },
       function complete() {
+        wx.stopPullDownRefresh();
+        // 隐藏正在加载
+        wx.hideNavigationBarLoading();
       }
     );
   }
