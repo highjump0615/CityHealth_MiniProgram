@@ -1,5 +1,8 @@
 <!--pages/shop/shop.wxml-->
 
+<!-- 引用星级评价 -->
+<import src="../../components/ratestar/ratestar.wxml" />
+
 <view class="container">
   <view class="content-main">
       <scroll-view scroll-y="true">
@@ -52,4 +55,5 @@
       </button>
     </view>
   </view>
+
 </view>

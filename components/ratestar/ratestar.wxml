@@ -15,7 +15,7 @@
 <template name="ratestar">
   <view class="ratestar">
     <block wx:for="{{[0,1,2,3,4]}}" wx:for-item="i" wx:key="">
-      <image wx:if="{{i < rating}}" src="../../res/images/rating_star.png" />
+      <image wx:if="{{i < rating}}" src="../../res/images/rating_star.png" data-value="{{i}}" bindtap= />
       <image wx:else src="../../res/images/rating_star_gray.png" />
     </block>
   </view>
