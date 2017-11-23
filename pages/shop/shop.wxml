@@ -15,7 +15,7 @@
               <text class="mr-40">环境： {{shop.ratingFacilities}}</text>
               <text>性价比： {{shop.ratingCost}}</text>
             </view>
-            <button class="color-theme but-transparent">发表点评</button>
+            <button class="color-theme but-transparent" bindtap="showRatingModal">发表点评</button>
           </view>
 
           <!-- 图片 -->
@@ -56,4 +56,32 @@
     </view>
   </view>
 
+  <!-- 评价对话框 -->
+  <modal wx:if="{{showRating}}"
+    class="modal"
+    title="发表点评"
+    confirm-text="提交"
+    cancel-text="取消"
+    bindconfirm="submitRating"
+    bindcancel="closeRatingModal">
+    <view>
+      <text>请对此店铺作出评价</text>
+
+      <!-- 服务 -->
+      <view class="mt-20 rate-item">
+        <text>服务</text>
+        <template is="ratestar" data="{{rating:ratings[0], type:0}}" />
+      </view>
+      <!-- 环境 -->
+      <view class="mt-10 rate-item" >
+        <text>环境</text>
+        <template is="ratestar" data="{{rating:ratings[1], type:1}}" />
+      </view>
+      <!-- 性价比 -->
+      <view class="mt-10 rate-item">
+        <text>性价比</text>
+        <template is="ratestar" data="{{rating:ratings[2], type:2}}" />
+      </view>
+    </view>
+  </modal>
 </view>

@@ -4,6 +4,9 @@ const app = getApp();
 var Shop = require('../../model/Shop.js');
 
 var gstrDistrict, gstrArea, gstrName;
+// 加载参数
+var gnPageNumber = 1;
+var gnPageSize = 10;
 
 Page({
 
@@ -11,9 +14,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // 加载参数
-    pageNumber: 1,
-    pageSize: 10,
     // 数据
     shops: [],
     showEmptyNotice: false
@@ -36,7 +36,7 @@ Page({
   getShops: function(isRefresh) {
     var that = this;
     var currentUser = app.globalData.currentUser;
-    var nPageNumber = this.data.pageNumber + 1;
+    var nPageNumber = gnPageNumber + 1;
 
     if (isRefresh) {
       nPageNumber = 1;
@@ -54,8 +54,8 @@ Page({
       area: gstrArea,
       name: gstrName,
       location: currentUser.getLocationFormatted(),
-      pageNumber: this.data.pageNumber,
-      pageSize: this.data.pageSize,
+      pageNumber: nPageNumber,
+      pageSize: gnPageSize,
       '3rd_session': app.globalData.thirdSession
     };
 
@@ -65,6 +65,8 @@ Page({
           // 失败
           return;
         }
+
+        gnPageNumber = nPageNumber;
 
         var shopObjs = that.data.shops;
         if (isRefresh) {

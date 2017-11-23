@@ -11,19 +11,27 @@ Page({
    */
   data: {
     shop: null,
-    images: []
+    images: [],
+
+    // 评价
+    showRating: false,
+    ratings: [5, 5, 5]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
     var shopId = options.id;
+    this.getShopDetail(shopId);
+  },
 
-    //
-    // 提取我的收藏
-    //
+  /**
+   * 提取店铺信息
+   */
+  getShopDetail: function(shopId) {
+    var that = this;
+    
     var paramData = {
       action: 'getShopDetail',
       '3rd_session': app.globalData.thirdSession,
@@ -123,6 +131,70 @@ Page({
       function complete() {
       }
     );
+  },
+
+  onButStar: function (e) {
+    var type = e.currentTarget.dataset.type;
+    var value = e.currentTarget.dataset.value;
+    
+    var ratings = this.data.ratings;
+    ratings[type] = value;
+
+    this.setData({
+      ratings: ratings
+    });
+  },
+
+  /**
+   * 点击发表点评
+   */
+  showRatingModal: function () {
+    this.setData({
+      showRating: true
+    });
+  },
+
+  /**
+   * 提交点评
+   */
+  submitRating: function () {
+    var that = this;
+
+    //
+    // 保存店铺点评
+    //
+    var paramData = {
+      action: 'saveRating',
+      '3rd_session': app.globalData.thirdSession,
+      shopid: this.data.shop.id,
+      ratingService: this.data.ratings[0],
+      ratingFacilities: this.data.ratings[1],
+      ratingCost: this.data.ratings[2]
+    };
+
+    api.postRequest(paramData,
+      function success(res) {
+        if (res.data.result < 0) {
+          // 失败
+          return;
+        }
+      },
+      function fail(err) {
+      },
+      function complete() {
+        that.getShopDetail(that.data.shop.id);
+        that.closeRatingModal();
+      }
+    );
+  },
+
+  /**
+   * 关闭发表点评
+   */
+  closeRatingModal: function () {
+    this.setData({
+      showRating: false
+    });
   },
 
   /**

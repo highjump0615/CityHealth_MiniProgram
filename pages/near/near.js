@@ -3,15 +3,16 @@ const app = getApp();
 var api = require('../../utils/api.js');
 var Shop = require('../../model/Shop.js');
 
+// 加载参数
+var gnPageNumber = 1;
+var gnPageSize = 10;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 加载参数
-    pageNumber: 1,
-    pageSize: 10,
     // 数据
     shops: []
   },
@@ -102,7 +103,7 @@ Page({
   getShops: function(isRefresh) {
     var that = this;
     var currentUser = app.globalData.currentUser;
-    var nPageNumber = this.data.pageNumber + 1;
+    var nPageNumber = gnPageNumber + 1;
 
     if (isRefresh) {
       nPageNumber = 1;
@@ -118,7 +119,7 @@ Page({
       action: 'getNearby',
       location: currentUser.getLocationFormatted(),
       pageNumber: nPageNumber,
-      pageSize: this.data.pageSize,
+      pageSize: gnPageSize,
       '3rd_session': app.globalData.thirdSession
     };
 
@@ -128,6 +129,8 @@ Page({
           // 失败
           return;
         }
+
+        gnPageNumber = nPageNumber;
 
         var shopObjs = that.data.shops;
         if (isRefresh) {
