@@ -36,7 +36,7 @@
             </button>
           </navigator>
           <!-- 定位 -->
-          <button class="but-transparent flex-row flex-center flex-rest-width" bindtap="onMap">
+          <button class="but-transparent flex-row flex-center flex-rest-width" data-index="{{index}}" bindtap="onMap">
             <image src="../../res/images/shoplist_location.png" class="mr-10" />
             <text>定位</text>
           </button>
