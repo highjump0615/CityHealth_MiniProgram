@@ -1,6 +1,6 @@
 var config = require('../config/config.js');
 
-var Image = function (id, path) {
+var Image = function (path = '', id = 0) {
   this.id = id;
   //this.url = config.image.baseUrl + path;
 

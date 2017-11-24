@@ -13,7 +13,8 @@
     "pages/profile/feedback",
     "pages/shop/shop",
     "pages/shop/mylist",
-    "pages/shop/create"
+    "pages/shop/create",
+    "pages/shop/image"
   ],
 
   "window":{

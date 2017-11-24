@@ -56,12 +56,12 @@ Page({
         shopNew.wechat = res.data.weChat;
         shopNew.address = res.data.address;
         {
-          var imgNew = new Image('', res.data.pictureUrl);
+          var imgNew = new Image(res.data.pictureUrl);
           shopNew.images.push(imgNew);
         }
         // 图片
         for (var i = 0; i < res.data.album.length; i++) {
-          var imgNew = new Image(res.data.album[i].pictureid, res.data.album[i].pictureUrl);
+          var imgNew = new Image(res.data.album[i].pictureUrl, res.data.album[i].pictureid);
           shopNew.images.push(imgNew);
         }
 
