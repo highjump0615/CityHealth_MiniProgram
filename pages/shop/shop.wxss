@@ -67,3 +67,18 @@ swiper-item image {
   width: 36rpx;
   height: 34rpx;
 }
+
+/* 发表点评对话框 */
+.rate-item {
+  display: flex;
+  align-items: center;
+}
+.rate-item text {
+  width: 150rpx;
+}
+
+.ratestar image {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 16rpx;
+}

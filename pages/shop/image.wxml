@@ -1,0 +1,18 @@
+<!--pages/shop/image.wxml-->
+
+<view class="container">
+  <block wx:for="{{images}}" wx:for-item="image" wx:key="">
+    <view class="tile-item">
+      <view class="item-content" data-index="{{index}}" bindtap="onImage" bindlongpress="onImageLong">
+        <image src="{{image.url}}"></image>
+      </view>
+    </view>
+  </block>
+
+  <!-- 添加 -->
+  <view class="tile-item">
+    <view class="item-content add-mark" bindtap="onButNew">
+        <image src="../../res/images/img_add.png"></image>
+    </view>
+  </view>    
+</view>

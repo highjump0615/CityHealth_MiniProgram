@@ -3,6 +3,7 @@
 page {
   height: 100vh;
   display: block;
+  background-color: white;
 }
 
 /* tab切换 */

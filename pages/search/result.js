@@ -3,15 +3,17 @@ var api = require('../../utils/api.js');
 const app = getApp();
 var Shop = require('../../model/Shop.js');
 
+var gstrDistrict, gstrArea, gstrName;
+// 加载参数
+var gnPageNumber = 1;
+var gnPageSize = 10;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 加载参数
-    pageNumber: 1,
-    pageSize: 10,
     // 数据
     shops: [],
     showEmptyNotice: false
@@ -24,21 +26,36 @@ Page({
     var that = this;
     var currentUser = app.globalData.currentUser;
 
-    var district = options.district;
-    var area = options.area;
-    var name = options.name;
+    gstrDistrict = options.district ? options.district : '';
+    gstrArea = options.area ? options.area : '';
+    gstrName = options.name ? options.name : '';
+
+    this.getShops(true);
+  },
+
+  getShops: function(isRefresh) {
+    var that = this;
+    var currentUser = app.globalData.currentUser;
+    var nPageNumber = gnPageNumber + 1;
+
+    if (isRefresh) {
+      nPageNumber = 1;
+    }
+
+    // 显示正在加载
+    wx.showNavigationBarLoading();
 
     //
-    // 获取附近店铺
+    // 查找店铺
     //
     var paramData = {
       action: 'queryShop',
-      district: district,
-      area: area,
-      name: name,
+      district: gstrDistrict,
+      area: gstrArea,
+      name: gstrName,
       location: currentUser.getLocationFormatted(),
-      pageNumber: this.data.pageNumber,
-      pageSize: this.data.pageSize,
+      pageNumber: nPageNumber,
+      pageSize: gnPageSize,
       '3rd_session': app.globalData.thirdSession
     };
 
@@ -49,7 +66,13 @@ Page({
           return;
         }
 
-        var shopObjs = [];
+        gnPageNumber = nPageNumber;
+
+        var shopObjs = that.data.shops;
+        if (isRefresh) {
+          shopObjs = [];
+        }
+        
         for (var i = 0; i < res.data.shops.length; i++) {
           var shopNew = Shop.fromObject(res.data.shops[i]);
           shopObjs.push(shopNew);
@@ -64,6 +87,9 @@ Page({
       function fail(err) {
       },
       function complete() {
+        wx.stopPullDownRefresh();
+        // 隐藏正在加载
+        wx.hideNavigationBarLoading();
       }
     );
   },
@@ -100,14 +126,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    this.getShops(true);
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    this.getShops(false);  
   },
 
   /**

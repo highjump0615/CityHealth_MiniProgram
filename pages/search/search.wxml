@@ -3,7 +3,7 @@
   <!-- 菜单 -->
   <view class="nav-items">
     <!-- 区域 -->
-    <navigator url="districts">
+    <navigator url="districts?type=1">
       <view class="nav-item bottom-border">
         <view class="flex-row flex-center flex-rest-width">
           <text class="text-name">区域</text>

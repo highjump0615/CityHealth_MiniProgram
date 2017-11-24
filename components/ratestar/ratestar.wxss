@@ -1,10 +1,5 @@
 /* components/ratestar/ratestar.wxss */
 
-.ratestar {
-  display: flex;
-  margin-top: 8rpx;
-}
-
 .ratestar image {
   width: 24rpx;
   height: 24rpx;

@@ -25,7 +25,7 @@ page {
 
 button {
   margin-top: 230rpx;
-  width: 100%;
+  width: 50%;
 }
 
 

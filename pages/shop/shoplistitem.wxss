@@ -24,3 +24,8 @@
 .img-shop {
   background: lightgray;
 }
+
+.ratestar {
+  display: flex;
+  margin-top: 8rpx;
+}

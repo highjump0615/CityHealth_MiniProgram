@@ -9,6 +9,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    category: null,
+    district: null,
+    area: null,
+    
     // 填数据
     name: '',
     phone: '',
@@ -28,7 +32,7 @@ Page({
     });
   },
   /**
-   * 输入店名
+   * 输入电话
    */
   onInputPhone: function(e) {
     this.setData({
@@ -36,7 +40,7 @@ Page({
     });
   },
   /**
-   * 输入店名
+   * 输入QQ
    */
   onInputQQ: function(e) {
     this.setData({
@@ -44,7 +48,7 @@ Page({
     });
   },
   /**
-   * 输入店名
+   * 输入微信
    */
   onInputWechat: function(e) {
     this.setData({
@@ -52,7 +56,7 @@ Page({
     });
   },
   /**
-   * 输入店名
+   * 输入地址
    */
   onInputAddress: function(e) {
     this.setData({
@@ -60,7 +64,7 @@ Page({
     });
   },
   /**
-   * 输入店名
+   * 输入介绍
    */
   onInputIntro: function(e) {
     this.setData({
@@ -74,7 +78,7 @@ Page({
   saveShop: function(e) {
     if (!this.data.name) {
       wx.showModal({
-        title: '请输入点名',
+        title: '请输入店名',
         showCancel: false,
       });
 
@@ -93,12 +97,16 @@ Page({
     var paramData = {
       action: 'saveShop',
       '3rd_session': app.globalData.thirdSession,
+      shopid: '',
       name: this.data.name,
       introduction: this.data.intro,
       phone: this.data.phone,
       qq: this.data.qq,
-      wechat: this.data.wechat,
+      weChat: this.data.wechat,
       address: this.data.address,
+      category: this.data.category.code,
+      district: this.data.district.code,
+      area: this.data.area.code
     };
 
     api.postRequest(paramData, 
@@ -107,6 +115,9 @@ Page({
           // 失败
           return;
         }
+
+        // 返回
+        wx.navigateBack();
       },
       function fail(err) {
       },
@@ -120,10 +131,57 @@ Page({
   },
 
   /**
+   * 选择
+   */
+  onSelectArea: function() {
+    if (this.data.district) {
+      wx.navigateTo({
+        url: '../search/districts?type=2&district=' + this.data.district.code
+      });
+    }
+  },
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var shopId = options.shopid;
+    if (!shopId) {
+      return;
+    }
+
+    var that = this;
+
+    //
+    // 提取店铺信息
+    //
+    var paramData = {
+      action: 'getShop',
+      '3rd_session': app.globalData.thirdSession,
+      shopid: shopId
+    };
+
+    api.postRequest(paramData,
+      function success(res) {
+        if (res.data.result < 0) {
+          // 失败
+          return;
+        }
+
+        that.setData({
+          name: res.data.name,
+          phone: res.data.phone,
+          qq: res.data.qq,
+          wechat: res.data.weChat,
+          address: res.data.address,
+          intro: res.data.introduction,
+        });
+      },
+      function fail(err) {
+      },
+      function complete() {
+      }
+    );
   },
 
   /**

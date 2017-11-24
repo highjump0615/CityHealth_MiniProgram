@@ -1,6 +1,6 @@
 // pages/shop/mylist.js
-var api = require('../../utils/api.js');
 const app = getApp();
+var api = require('../../utils/api.js');
 var Shop = require('../../model/Shop.js');
 
 Page({
@@ -108,33 +108,108 @@ Page({
   onShareAppMessage: function () {
   
   },
+
   /**
    * 删除列表里的店铺
    */
-  onDelete: function() {
+  onDelete: function(e) {
+    var that = this;
+    
     wx.showModal({
       title: '删除',
       content: '确认要删除当前选择店铺吗？',
-      confirmColor: '#1AAD19'
+      confirmColor: '#1AAD19',
+      success: function(res) {
+        if (res.confirm) {
+          that.deleteShop(e.currentTarget.dataset.index);
+        }
+      }
     });
   },
+
+  /**
+   * 删除指定店铺
+   */
+  deleteShop: function(index) {
+    var that = this;
+    var shop = this.data.shops[index];
+  
+    var paramData = {
+      action: 'deleteShop',
+      '3rd_session': app.globalData.thirdSession,
+      shopid: shop.id
+    };
+
+    api.postRequest(paramData, 
+      function success(res) {
+        if (res.data.result < 0) {
+          // 失败
+          return;
+        }
+        
+        // 删除该店铺
+        that.data.shops.splice(index, 1);
+
+        // 更新数据
+        that.setData({
+          shops: that.data.shops
+        });
+      },
+      function fail(err) {
+      },
+      function complete() {
+      }
+    );
+  },
+
   /**
    * 地图导航
    */
-  onMap: function() {
-    wx.openLocation({
-      latitude: 39.9427,
-      longitude: 116.3337,
-      scale: 12,
-      name: '都市保健',
-      address: '北京市朝阳区东亚望京中心',
-      success: function() {},
-      fail: function(err) {
-        wx.showModal({
-          content: err.errMsg,
-          showCancel: false
-        });
+  onMap: function(e) {
+    var that = this;
+
+    wx.chooseLocation({
+      success: function (res) {
+        //
+        // 保存店铺位置
+        //
+        var shop = that.data.shops[e.currentTarget.dataset.index];
+        
+        var paramData = {
+          action: 'saveLocation',
+          '3rd_session': app.globalData.thirdSession,
+          shopid: shop.id,
+          location: res.latitude + ',' + res.longitude
+        };
+    
+        api.postRequest(paramData, 
+          function success(res) {
+            if (res.data.result < 0) {
+              // 失败
+              return;
+            }            
+          },
+          function fail(err) {
+          },
+          function complete() {
+          }
+        );
       }
     });
+
+    // wx.openLocation({
+    //   latitude: 39.9427,
+    //   longitude: 116.3337,
+    //   scale: 12,
+    //   name: '都市保健',
+    //   address: '北京市朝阳区东亚望京中心',
+    //   success: function() {},
+    //   fail: function(err) {
+    //     wx.showModal({
+    //       content: err.errMsg,
+    //       showCancel: false
+    //     });
+    //   }
+    // });
   }
 })

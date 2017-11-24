@@ -5,7 +5,7 @@
     "pages/logs/logs",
     "pages/near/near",
     "pages/search/search",
-    "pages/search/districts",
+    "pages/search/districts", 
     "pages/search/result",
     "pages/profile/profile",
     "pages/profile/mycardlist",
@@ -13,14 +13,17 @@
     "pages/profile/feedback",
     "pages/shop/shop",
     "pages/shop/mylist",
-    "pages/shop/create"
+    "pages/shop/create",
+    "pages/shop/image",
+    "pages/shop/map"
   ],
 
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#353535",
     "navigationBarTitleText": "都市保健",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#efeff4"
   },
 
   "tabBar": {
