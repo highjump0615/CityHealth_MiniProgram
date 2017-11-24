@@ -16,7 +16,7 @@ Shop.fromObject = function (object) {
 
 Shop.prototype = {
   setBasicData: function (object) {
-    this.id = object.shopid;
+    this.id = parseInt(object.shopid);
     if (object.pictureUrl.indexOf('nopic') > -1) {
       this.pictureUrl = config.baseUrl + object.pictureUrl;
     } else if (object.pictureUrl.substr(0, 1) == '/') {

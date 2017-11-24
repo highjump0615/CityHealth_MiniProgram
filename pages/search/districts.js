@@ -4,6 +4,7 @@ var util = require('../../utils/util.js');
 const app = getApp();
 
 var gDistrictCode = null;
+var gnType = 0;
 
 Page({
 
@@ -18,12 +19,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    gnType = options.type;
+
     // 获取区域
     var that = this;
 
     gDistrictCode = options.district;
 
-    if (gDistrictCode) {
+    if (gnType == 0) {
+      //
+      // 提取店铺分类
+      //
+      var paramData = {
+        action: 'getCategory',
+        '3rd_session': app.globalData.thirdSession
+      };
+    }
+    else if (gDistrictCode) {
       //
       // 提取商圈代码
       //
@@ -51,15 +63,20 @@ Page({
         }
 
         // 更新数据
-        if (gDistrictCode) {
+        if (gnType == 0) {
+          that.setData({
+            values: res.data.category
+          });
+        }
+        else if (gDistrictCode) {
           that.setData({
             values: res.data.area
-          });  
+          });
         }
         else {
           that.setData({
             values: res.data.district
-          });  
+          });
         }
       },
       function fail(err) {
@@ -77,7 +94,13 @@ Page({
     var currentArea = prevPage.data.area;
     
     // 设置商圈
-    if (gDistrictCode) {
+    if (gnType == 0) {
+      prevPage.setData({
+        category: this.data.values[e.target.dataset.index]
+      });
+    }
+    // 设置商圈
+    else if (gDistrictCode) {
       currentArea = this.data.values[e.target.dataset.index];
       prevPage.setData({
         area: currentArea

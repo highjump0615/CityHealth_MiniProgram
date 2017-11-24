@@ -108,16 +108,60 @@ Page({
   onShareAppMessage: function () {
   
   },
+
   /**
    * 删除列表里的店铺
    */
-  onDelete: function() {
+  onDelete: function(e) {
+    var that = this;
+    
     wx.showModal({
       title: '删除',
       content: '确认要删除当前选择店铺吗？',
-      confirmColor: '#1AAD19'
+      confirmColor: '#1AAD19',
+      success: function(res) {
+        if (res.confirm) {
+          that.deleteShop(e.currentTarget.dataset.index);
+        }
+      }
     });
   },
+
+  /**
+   * 删除指定店铺
+   */
+  deleteShop: function(index) {
+    var that = this;
+    var shop = this.data.shops[index];
+  
+    var paramData = {
+      action: 'deleteShop',
+      '3rd_session': app.globalData.thirdSession,
+      shopid: shop.id
+    };
+
+    api.postRequest(paramData, 
+      function success(res) {
+        if (res.data.result < 0) {
+          // 失败
+          return;
+        }
+        
+        // 删除该店铺
+        that.data.shops.splice(index, 1);
+
+        // 更新数据
+        that.setData({
+          shops: that.data.shops
+        });
+      },
+      function fail(err) {
+      },
+      function complete() {
+      }
+    );
+  },
+
   /**
    * 地图导航
    */

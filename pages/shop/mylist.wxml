@@ -13,7 +13,7 @@
     <block wx:for="{{shops}}" wx:for-item="shop" wx:key="">
       <view class="nav-item bottom-border">
         <!-- 基础信息 -->
-        <navigator url="../shop/shop">
+        <navigator url="../shop/shop?id={{shop.id}}">
           <view class="flex-row">
             <template is="shoplistitem" data="{{...shop}}" />
           </view>
@@ -22,7 +22,7 @@
         <!-- 操作区 -->
         <view class="flex-row view-operation">
           <!-- 修改 -->
-          <navigator url="create" class="flex-rest-width">
+          <navigator url="create?shopid={{shop.id}}" class="flex-rest-width">
             <button class="but-transparent flex-row flex-center">
               <image src="../../res/images/shoplist_edit.png" class="mr-10" />
               <text>修改</text>
@@ -39,7 +39,7 @@
             <text>定位</text>
           </button>
           <!-- 删除 -->
-          <button class="but-transparent flex-row flex-center flex-rest-width" bindtap="onDelete">
+          <button class="but-transparent flex-row flex-center flex-rest-width" data-index="{{index}}" bindtap="onDelete">
               <image src="../../res/images/shoplist_delete.png" class="mr-10" />
               <text>删除</text>
             </button>

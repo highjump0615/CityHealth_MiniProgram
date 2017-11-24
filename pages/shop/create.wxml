@@ -6,7 +6,46 @@
     <view class="nav-item bottom-border">
       <view class="flex-row flex-rest-width">
         <text class="text-name">店名</text>
-        <input class="nav-item-content flex-rest-width" placeholder="店铺名称" bindinput="onInputName" />
+        <input class="nav-item-content flex-rest-width" placeholder="店铺名称" bindinput="onInputName" value="{{name}}" />
+      </view>
+    </view>
+
+    <!-- 分类 -->
+    <navigator url="../search/districts?type=0">
+      <view class="nav-item bottom-border">
+        <view class="flex-row flex-center flex-rest-width">
+          <text class="text-name">分类</text>
+          <text class="nav-item-content flex-rest-width">{{category.name}}</text>
+        </view>
+        <view class="flex-row flex-center">
+          <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+        </view>
+      </view>
+    </navigator>
+
+    <!-- 区域 -->
+    <navigator url="../search/districts?type=1">
+      <view class="nav-item bottom-border">
+        <view class="flex-row flex-center flex-rest-width">
+          <text class="text-name">区域</text>
+          <text class="nav-item-content flex-rest-width">{{district.name}}</text>
+        </view>
+        <view class="flex-row flex-center">
+          <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+        </view>
+      </view>
+    </navigator>
+
+    <!-- 商圈 -->
+    <view hover-class="navigator-hover" bindtap="onSelectArea">
+      <view class="nav-item bottom-border">
+        <view class="flex-row flex-center flex-rest-width">
+          <text class="text-name">商圈</text>
+          <text class="nav-item-content flex-rest-width">{{area.name}}</text>
+        </view>
+        <view class="flex-row flex-center">
+          <image class="nav-item-arrow" src="../../res/images/nav_rightmark.png" ></image>
+        </view>
       </view>
     </view>
 
@@ -14,7 +53,7 @@
     <view class="nav-item bottom-border">
       <view class="flex-row flex-rest-width">
         <text class="text-name">电话</text>
-        <input class="nav-item-content flex-rest-width" placeholder="手机或固话" />
+        <input class="nav-item-content flex-rest-width" placeholder="手机或固话" type="number" bindinput="onInputPhone" value="{{phone}}" />
       </view>
     </view>
 
@@ -22,7 +61,7 @@
     <view class="nav-item bottom-border">
       <view class="flex-row flex-rest-width">
         <text class="text-name">QQ</text>
-        <input class="nav-item-content flex-rest-width" placeholder="QQ号码" />
+        <input class="nav-item-content flex-rest-width" placeholder="QQ号码" type="number" bindinput="onInputQQ" value="{{qq}}" />
       </view>
     </view>
 
@@ -30,7 +69,7 @@
     <view class="nav-item bottom-border">
       <view class="flex-row flex-rest-width">
         <text class="text-name">微信</text>
-        <input class="nav-item-content flex-rest-width" placeholder="微信号码" />
+        <input class="nav-item-content flex-rest-width" placeholder="微信号码" bindinput="onInputWechat" value="{{wechat}}" />
       </view>
     </view>
 
@@ -38,7 +77,7 @@
     <view class="nav-item bottom-border">
       <view class="flex-row flex-rest-width">
         <text class="text-name">地址</text>
-        <input class="nav-item-content flex-rest-width" placeholder="店铺地址" />
+        <input class="nav-item-content flex-rest-width" placeholder="店铺地址" bindinput="onInputAddress" value="{{address}}" />
       </view>
     </view>
 
@@ -46,13 +85,13 @@
     <view class="nav-item bottom-border">
       <view class="flex-row flex-rest-width">
         <text class="text-name">介绍</text>
-        <textarea class="nav-item-content flex-rest-width" placeholder="店铺描述" />
+        <textarea class="nav-item-content flex-rest-width" placeholder="店铺描述" bindinput="onInputIntro" value="{{intro}}" />
       </view>
     </view>
   
   </view>
 
-  <button type="primary" bindtap="saveShop" loading="{{showLoading}}">确定</button>
+  <button type="primary" bindtap="saveShop" loading="{{showLoading}}" disabled="{{showLoading}}">确定</button>
   
 </view>
   

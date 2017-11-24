@@ -23,7 +23,7 @@ Page({
   onSelectArea: function() {
     if (this.data.district) {
       wx.navigateTo({
-        url: 'districts?district=' + this.data.district.code
+        url: 'districts?type=2&district=' + this.data.district.code
       });
     }
   },

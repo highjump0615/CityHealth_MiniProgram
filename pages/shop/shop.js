@@ -53,7 +53,7 @@ Page({
         shopNew.intro = res.data.introduction;
         shopNew.phone = res.data.phone;
         shopNew.qq = res.data.qq;
-        shopNew.wechat = res.data.wechat;
+        shopNew.wechat = res.data.weChat;
         shopNew.address = res.data.address;
         {
           var imgNew = new Image('', res.data.pictureUrl);
